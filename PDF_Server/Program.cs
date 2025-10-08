@@ -12,6 +12,8 @@ builder.Services.AddScoped<IPdfGenerator, PdfGenerator>();
 builder.Services.AddScoped<ILogStorageService>(provider =>
     new TxtLogStorageService("logs.txt"));
 builder.Services.AddScoped<IStorageService, StorageService>();
+builder.Services.Configure<KafkaOptions>(builder.Configuration.GetSection("Kafka"));
+builder.Services.AddSingleton<IKafkaProducerService, KafkaProducerService>();
 
 
 builder.WebHost.UseUrls("http://+:5000");
