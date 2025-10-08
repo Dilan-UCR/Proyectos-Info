@@ -39,7 +39,7 @@ namespace PDF_Server.Controllers
                     request.CustomerId,
                     dateGeneration
                 );
-                await LogAsync(request.CorrelationId, "Consulta a la base de datos y creación de PDF exitosa", cancellationToken);
+                await LogAsync(request.CorrelationId, "Consulta a la base de datos y creacion de PDF exitosa", cancellationToken);
                 return Ok(new { Message = "PDF generado correctamente" });
             }
             catch (Exception ex)
