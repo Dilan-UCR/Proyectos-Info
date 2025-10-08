@@ -13,12 +13,14 @@ namespace PDF_Server.Controllers
         private readonly IPdfGenerator _pdfGenerator;
         private readonly ILogStorageService _logStorageService;
         private readonly IStorageService _storageService;
+        private readonly IKafkaProducerService _kafkaProducerService;
 
-        public PdfController(IPdfGenerator pdfGenerator, ILogStorageService logStorageService, IStorageService storageService)
+        public PdfController(IPdfGenerator pdfGenerator, ILogStorageService logStorageService, IStorageService storageService, IKafkaProducerService kafkaProducerService)
         {
             _pdfGenerator = pdfGenerator;
             _logStorageService = logStorageService;
             _storageService = storageService;
+            _kafkaProducerService = kafkaProducerService;
         }
 
         [HttpPost("generate")]
@@ -49,13 +51,16 @@ namespace PDF_Server.Controllers
 
         private async Task LogAsync(string correlationId, string message, CancellationToken cancellationToken)
         {
-            ProcessLogDto log = new ProcessLogDto
+            LogRequestDto logRequest = new LogRequestDto
             {
                 CorrelationId = correlationId,
+                Service = "PDF Server",
+                Endpoint = HttpContext?.Request?.Path.Value ?? string.Empty,
                 Timestamp = DateTime.UtcNow,
-                Message = message
+                Payload = message,
+                Success = !message.ToLower().Contains("error")
             };
-            await _logStorageService.SaveLogAsync(log);
+            await _kafkaProducerService.SendLogAsync(logRequest);
         }
     }
 }
