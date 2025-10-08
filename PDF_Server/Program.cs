@@ -11,6 +11,7 @@ builder.Services.AddScoped<IAdventureWorksQueries, AdventureWorksQueries>();
 builder.Services.AddScoped<IPdfGenerator, PdfGenerator>();
 builder.Services.AddScoped<ILogStorageService>(provider =>
     new TxtLogStorageService("logs.txt"));
+builder.Services.AddScoped<IStorageService, StorageService>();
 
 
 builder.WebHost.UseUrls("http://+:5000");

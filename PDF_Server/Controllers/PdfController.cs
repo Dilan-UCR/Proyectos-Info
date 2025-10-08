@@ -12,11 +12,13 @@ namespace PDF_Server.Controllers
     {
         private readonly IPdfGenerator _pdfGenerator;
         private readonly ILogStorageService _logStorageService;
+        private readonly IStorageService _storageService;
 
-        public PdfController(IPdfGenerator pdfGenerator, ILogStorageService logStorageService)
+        public PdfController(IPdfGenerator pdfGenerator, ILogStorageService logStorageService, IStorageService storageService)
         {
             _pdfGenerator = pdfGenerator;
             _logStorageService = logStorageService;
+            _storageService = storageService;
         }
 
         [HttpPost("generate")]
@@ -25,7 +27,16 @@ namespace PDF_Server.Controllers
             await LogAsync(request.CorrelationId, "Datos recibidos correctamente", cancellationToken);
             try
             {
-                await _pdfGenerator.GenerateCustomerReportsAsync(request);
+                byte[] pdfBytes = await _pdfGenerator.GenerateCustomerReportsAsync(request);
+                DateTime dateGeneration = DateTime.UtcNow;
+                string nameFile = $"Bill_{request.CustomerId}_{dateGeneration:yyyyMMdd_HHmmss}.pdf";
+                await _storageService.UploadPdfAsync(
+                    pdfBytes,
+                    nameFile,
+                    request.CorrelationId,
+                    request.CustomerId,
+                    dateGeneration
+                );
                 await LogAsync(request.CorrelationId, "Consulta a la base de datos y creación de PDF exitosa", cancellationToken);
                 return Ok(new { Message = "PDF generado correctamente" });
             }

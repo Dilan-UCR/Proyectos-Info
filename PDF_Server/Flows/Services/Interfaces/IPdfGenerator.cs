@@ -2,6 +2,6 @@
 {
     public interface IPdfGenerator
     {
-        Task GenerateCustomerReportsAsync(DTOs.PdfRequestDto request);
+        Task<byte[]> GenerateCustomerReportsAsync(DTOs.PdfRequestDto request);
     }
 }

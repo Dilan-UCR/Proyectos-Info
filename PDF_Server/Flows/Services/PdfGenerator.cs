@@ -19,7 +19,7 @@ namespace PDF_Server.Flows.Services
             QuestPDF.Settings.License = LicenseType.Community;
         }
 
-        public async Task GenerateCustomerReportsAsync(PdfRequestDto request)
+        public async Task<byte[]> GenerateCustomerReportsAsync(PdfRequestDto request)
         {
             var culture = new CultureInfo("es-CR");
             var data1 = await _queries.Query1Async(request);
@@ -27,15 +27,14 @@ namespace PDF_Server.Flows.Services
             //var data3 = await _queries.Query3Async(request);
 
             var customer = await _queries.getCostomerAsync(request.CustomerId);
-            var fileName = $"Factura_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
 
-            GeneratePdf(fileName, data1, "Reporte 1", customer);
+            return GeneratePdf(data1, "Reporte 1", customer);
             //GeneratePdf("Report2.pdf", data2, "Reporte 2");
             //GeneratePdf("Report3.pdf", data3, "Reporte 3");
 
             
         }
-        private void GeneratePdf<T>(string fileName, IEnumerable<T> data, string title, CustomerInfo customer)
+        private byte[] GeneratePdf<T>(IEnumerable<T> data, string title, CustomerInfo customer)
         {
             var props = typeof(T).GetProperties();
 
@@ -102,7 +101,6 @@ namespace PDF_Server.Flows.Services
                                 totalAmount += Convert.ToDecimal(props[2].GetValue(item) ?? 0);
                             }
                             table.Cell().ColumnSpan(3).PaddingTop(4).Element(e => e.LineHorizontal(0.5f).LineColor(Colors.Grey.Lighten2));
-
                             table.Cell().ColumnSpan(2).AlignRight().PaddingTop(6).Text("Total:").SemiBold();
                             table.Cell().AlignRight().PaddingTop(6).Text(totalAmount.ToString()).SemiBold();
                         });
@@ -111,7 +109,9 @@ namespace PDF_Server.Flows.Services
                 });
             });
 
-            document.GeneratePdf(fileName);
+            using var ms = new MemoryStream();
+            document.GeneratePdf(ms);
+            return ms.ToArray();
         }
     }
 }
