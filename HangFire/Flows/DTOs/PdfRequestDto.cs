@@ -1,6 +1,6 @@
 namespace SERVERHANGFIRE.Flows.DTOs
 
-{
+{ 
     public class LogRequestDto
     {
         public string CorrelationId { get; set; } = string.Empty;
