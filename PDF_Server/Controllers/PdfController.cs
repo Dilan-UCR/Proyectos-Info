@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PDF_Server.Flows.DTOs;
 using PDF_Server.Flows.Services.Interfaces;
+using System.Text.Json;
 
 namespace PDF_Server.Controllers
 {
@@ -11,14 +12,12 @@ namespace PDF_Server.Controllers
     public class PdfController : ControllerBase
     {
         private readonly IPdfGenerator _pdfGenerator;
-        private readonly ILogStorageService _logStorageService;
         private readonly IStorageService _storageService;
         private readonly IKafkaProducerService _kafkaProducerService;
 
-        public PdfController(IPdfGenerator pdfGenerator, ILogStorageService logStorageService, IStorageService storageService, IKafkaProducerService kafkaProducerService)
+        public PdfController(IPdfGenerator pdfGenerator, IStorageService storageService, IKafkaProducerService kafkaProducerService)
         {
             _pdfGenerator = pdfGenerator;
-            _logStorageService = logStorageService;
             _storageService = storageService;
             _kafkaProducerService = kafkaProducerService;
         }
@@ -26,7 +25,7 @@ namespace PDF_Server.Controllers
         [HttpPost("generate")]
         public async Task<IActionResult> GeneratePdf([FromBody] PdfRequestDto request, CancellationToken cancellationToken)
         {
-            await LogAsync(request.CorrelationId, "Datos recibidos correctamente", cancellationToken);
+            await LogAsync(request.CorrelationId, request, "Datos recibidos correctamente", cancellationToken);
             try
             {
                 byte[] pdfBytes = await _pdfGenerator.GenerateCustomerReportsAsync(request);
@@ -39,25 +38,30 @@ namespace PDF_Server.Controllers
                     request.CustomerId,
                     dateGeneration
                 );
-                await LogAsync(request.CorrelationId, "Consulta a la base de datos y creacion de PDF exitosa", cancellationToken);
+                await LogAsync(request.CorrelationId, request, "Consulta a la base de datos y creacion de PDF exitosa", cancellationToken);
                 return Ok(new { Message = "PDF generado correctamente" });
             }
             catch (Exception ex)
             {
-                await LogAsync(request.CorrelationId, $"Error al consultar la base de datos o crear el PDF: {ex.Message}", cancellationToken);
+                await LogAsync(request.CorrelationId, request, $"Error al consultar la base de datos o crear el PDF: {ex.Message}", cancellationToken);
                 return StatusCode(500, new { Message = "Error al consultar la base de datos o crear el PDF" });
             }
         }
 
-        private async Task LogAsync(string correlationId, string message, CancellationToken cancellationToken)
+        private async Task LogAsync(string correlationId, PdfRequestDto request, string message, CancellationToken cancellationToken)
         {
+            var payload = new
+            {
+                Request = request,
+                Message = message
+            };
             LogRequestDto logRequest = new LogRequestDto
             {
                 CorrelationId = correlationId,
                 Service = "PDF Server",
                 Endpoint = HttpContext?.Request?.Path.Value ?? string.Empty,
                 Timestamp = DateTime.UtcNow,
-                Payload = message,
+                Payload = JsonSerializer.Serialize(payload),
                 Success = !message.ToLower().Contains("error")
             };
             await _kafkaProducerService.SendLogAsync(logRequest);
