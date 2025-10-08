@@ -1,53 +1,52 @@
 using System.Net.Http.Json;
 using SERVERHANGFIRE.Flows.DTOs;
 using Microsoft.Extensions.Logging;
+using SERVERHANGFIRE.Flows.Services.Interfaces;
 
 namespace SERVERHANGFIRE.Flows.Services
 {
-    public interface IHttpClientService
-    {
-        Task<bool> SendReportRequestAsync(PdfRequestDto request);
-        Task<bool> SendLogAsync(LogRequestDto log);
-    }
+   
 
     public class HttpClientService : IHttpClientService
     {
         private readonly HttpClient _httpClient;
         private readonly IKafkaProducerService _kafkaProducer;
         private readonly ILogger<HttpClientService> _logger;
+        private readonly PdfServerOptions _pdfOptions;
 
         public HttpClientService(
-            HttpClient httpClient, 
-            IKafkaProducerService kafkaProducer, 
-            ILogger<HttpClientService> logger)
+            HttpClient httpClient,
+            IKafkaProducerService kafkaProducer,
+            ILogger<HttpClientService> logger,
+            Microsoft.Extensions.Options.IOptions<PdfServerOptions> pdfOptions)
         {
             _httpClient = httpClient;
             _kafkaProducer = kafkaProducer;
             _logger = logger;
+            _pdfOptions = pdfOptions.Value;
         }
 
         public async Task<bool> SendReportRequestAsync(PdfRequestDto request)
         {
             try
             {
-                Console.WriteLine($"Payload a enviar al PDF server: {System.Text.Json.JsonSerializer.Serialize(request)}");
+                var response = await _httpClient.PostAsJsonAsync(_pdfOptions.BaseUrl, request);
 
-                var success = await _kafkaProducer.SendPdfRequestAsync(request);
-
-                if (success)
+                if (response.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("PDF request enviado correctamente a Kafka. CorrelationId={CorrelationId}", request.CorrelationId);
+                    _logger.LogInformation("✅ PDF server respondió correctamente. CorrelationId={CorrelationId}", request.CorrelationId);
+                    return true;
                 }
                 else
                 {
-                    _logger.LogError("Error al enviar PDF request a Kafka. CorrelationId={CorrelationId}", request.CorrelationId);
+                    _logger.LogError("❌ PDF server devolvió error {StatusCode}. CorrelationId={CorrelationId}", 
+                        response.StatusCode, request.CorrelationId);
+                    return false;
                 }
-
-                return success;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Excepción al enviar PDF request a Kafka. CorrelationId={CorrelationId}", request.CorrelationId);
+                _logger.LogError(ex, "❌ Error al conectar con el PDF server. CorrelationId={CorrelationId}", request.CorrelationId);
                 return false;
             }
         }
