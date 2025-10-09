@@ -22,7 +22,7 @@ namespace PDF_Server.Flows.Services
             content.Add(fileContent, "file", fileName);
             content.Add(new StringContent(correlationId), "correlationId");
             content.Add(new StringContent(customerId.ToString()), "clientId");
-            content.Add(new StringContent(dateGeneration.ToString("o")), "dateGeneration");
+            content.Add(new StringContent(dateGeneration.ToString("yyyy-MM-dd")), "dateGeneration");
             var reponse = await _httpClient.PostAsync(_storageUrl, content);
             return reponse.IsSuccessStatusCode;
         }

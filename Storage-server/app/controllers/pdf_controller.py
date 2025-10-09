@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse
 from app.models.request_dto import RequestDTO
 from app.services.pdf_service import PdfService
 
-router = APIRouter(prefix="/app/pdf", tags=["PDF"])
+router = APIRouter(prefix="/api/storage", tags=["PDF"])
 
 def get_pdf_service() -> PdfService:
     return PdfService()

@@ -28,6 +28,7 @@ namespace PDF_Server.Controllers
             await LogAsync(request.CorrelationId, request, "Datos recibidos correctamente", cancellationToken);
             try
             {
+                Console.WriteLine("Entro");
                 byte[] pdfBytes = await _pdfGenerator.GenerateCustomerReportsAsync(request);
                 DateTime dateGeneration = DateTime.UtcNow;
                 string nameFile = $"Bill_{request.CustomerId}_{dateGeneration:yyyyMMdd_HHmmss}.pdf";
