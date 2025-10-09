@@ -28,6 +28,7 @@ class PdfService(IPdfService):
             
             # Validaciones
             validate_pdf_file(file)
+
             # validate_request_fields(request_dto.correlationId, request_dto.clientId, request_dto.dateGeneration)
             await kafka_log_info("Validaciones completadas exitosamente", correlation_id)
 

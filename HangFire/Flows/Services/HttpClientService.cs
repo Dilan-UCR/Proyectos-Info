@@ -30,6 +30,7 @@ namespace SERVERHANGFIRE.Flows.Services
         {
             try
             {
+                _logger.LogInformation("URL destino PDF_Server: {Url}", _pdfOptions.BaseUrl);
                 var response = await _httpClient.PostAsJsonAsync(_pdfOptions.BaseUrl, request);
 
                 if (response.IsSuccessStatusCode)
