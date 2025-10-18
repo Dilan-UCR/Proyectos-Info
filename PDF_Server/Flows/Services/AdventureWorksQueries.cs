@@ -3,7 +3,7 @@ using PDF_Server.Flows.DTOs;
 using PDF_Server.Flows.Services.Interfaces;
 using Dapper;
 
-namespace PDF_Server.Flows.Services
+namespace PDF_Server.Flows.Services 
 {
     public class AdventureWorksQueries : IAdventureWorksQueries
     {

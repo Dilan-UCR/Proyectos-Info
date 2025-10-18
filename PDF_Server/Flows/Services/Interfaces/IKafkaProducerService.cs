@@ -6,4 +6,4 @@ namespace PDF_Server.Flows.Services.Interfaces
     {
         Task<bool> SendLogAsync(LogRequestDto log);
     }
-}
+} 

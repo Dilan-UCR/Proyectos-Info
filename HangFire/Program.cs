@@ -13,6 +13,8 @@ builder.Services.Configure<KafkaOptions>(builder.Configuration.GetSection("Kafka
 
 builder.Services.AddScoped<IReportJobService, ReportJobService>();
 builder.Services.AddSingleton<IKafkaProducerService, KafkaProducerService>(); 
+builder.Services.AddScoped<IEmailJobService, EmailJobService>();       
+builder.Services.AddScoped<IMessagingJobService, MessagingJobService>(); 
 builder.Services.AddScoped<IHttpClientService, HttpClientService>();
 builder.Services.Configure<PdfServerOptions>(builder.Configuration.GetSection("PdfServer"));
 

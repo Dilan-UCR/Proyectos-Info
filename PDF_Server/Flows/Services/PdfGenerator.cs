@@ -6,7 +6,7 @@ using QuestPDF.Infrastructure;
 using System.ComponentModel;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Runtime.InteropServices.JavaScript.JSType; 
 
 namespace PDF_Server.Flows.Services
 {

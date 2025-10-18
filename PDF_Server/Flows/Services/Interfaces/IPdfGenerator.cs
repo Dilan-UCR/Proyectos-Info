@@ -5,3 +5,4 @@
         Task<byte[]> GenerateCustomerReportsAsync(DTOs.PdfRequestDto request);
     }
 }
+ 

@@ -2,7 +2,7 @@
 
 namespace PDF_Server.Flows.Services
 {
-    public class StorageService : IStorageService
+    public class StorageService : IStorageService 
     {
         private readonly HttpClient _httpClient;
         private readonly string _storageUrl;

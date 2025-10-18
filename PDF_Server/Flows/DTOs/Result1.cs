@@ -7,3 +7,4 @@
         public decimal TotalDue { get; set; }
     }
 }
+ 

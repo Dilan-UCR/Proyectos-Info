@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace PDF_Server.Flows.Services
 {
-    public class KafkaOptions
+    public class KafkaOptions 
     {
         public string BootstrapServers { get; set; } = "48.211.170.113:9092";
         public string Topic { get; set; } = "logs-pdf";
