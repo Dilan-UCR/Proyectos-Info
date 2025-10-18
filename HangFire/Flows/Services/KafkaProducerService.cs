@@ -39,12 +39,12 @@ namespace SERVERHANGFIRE.Flows.Services
                 var message = JsonSerializer.Serialize(log);
                 var result = await _producer.ProduceAsync(_topic, new Message<Null, string> { Value = message });
 
-                _logger.LogInformation("✅ Log enviado a Kafka. CorrelationId={CorrelationId}", log.CorrelationId);
+                _logger.LogInformation("Log enviado a Kafka. CorrelationId={CorrelationId}", log.CorrelationId);
                 return true;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error al enviar log a Kafka. CorrelationId={CorrelationId}", log.CorrelationId);
+                _logger.LogError(ex, "Error al enviar log a Kafka. CorrelationId={CorrelationId}", log.CorrelationId);
                 return false;
             }
         }

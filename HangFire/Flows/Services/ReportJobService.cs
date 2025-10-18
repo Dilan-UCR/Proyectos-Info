@@ -37,7 +37,7 @@ namespace SERVERHANGFIRE.Flows.Services
 
             try
             {
-                _logger.LogInformation("🔄 Iniciando procesamiento. CorrelationId={CorrelationId}", correlationId);
+                _logger.LogInformation("Iniciando procesamiento. CorrelationId={CorrelationId}", correlationId);
 
                 // Crear request para el PDF server
                 var pdfRequest = new PdfRequestDto
@@ -60,18 +60,18 @@ namespace SERVERHANGFIRE.Flows.Services
 
                 if (success)
                 {
-                    _logger.LogInformation("✅ Procesamiento completado. CorrelationId={CorrelationId}", correlationId);
+                    _logger.LogInformation("Procesamiento completado. CorrelationId={CorrelationId}", correlationId);
                 }
                 else
                 {
-                    _logger.LogWarning("⚠ Procesamiento completado con errores. CorrelationId={CorrelationId}", correlationId);
+                    _logger.LogWarning("Procesamiento completado con errores. CorrelationId={CorrelationId}", correlationId);
                 }
             }
             catch (Exception ex)
             {
                 log.Payload += $", Error: {ex.Message}";
                 await _kafkaProducer.SendLogAsync(log);
-                _logger.LogError(ex, "❌ Error inesperado. CorrelationId={CorrelationId}", correlationId);
+                _logger.LogError(ex, "Error inesperado. CorrelationId={CorrelationId}", correlationId);
                 throw; // Hangfire manejará el reintento
             }
         }

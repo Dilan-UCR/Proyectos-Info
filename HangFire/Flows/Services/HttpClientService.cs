@@ -35,19 +35,19 @@ namespace SERVERHANGFIRE.Flows.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    _logger.LogInformation("✅ PDF server respondió correctamente. CorrelationId={CorrelationId}", request.CorrelationId);
+                    _logger.LogInformation("PDF server respondió correctamente. CorrelationId={CorrelationId}", request.CorrelationId);
                     return true;
                 }
                 else
                 {
-                    _logger.LogError("❌ PDF server devolvió error {StatusCode}. CorrelationId={CorrelationId}", 
+                    _logger.LogError("PDF server devolvió error {StatusCode}. CorrelationId={CorrelationId}", 
                         response.StatusCode, request.CorrelationId);
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error al conectar con el PDF server. CorrelationId={CorrelationId}", request.CorrelationId);
+                _logger.LogError(ex, " Error al conectar con el PDF server. CorrelationId={CorrelationId}", request.CorrelationId);
                 return false;
             }
         }

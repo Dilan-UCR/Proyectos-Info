@@ -75,7 +75,7 @@ namespace SERVERHANGFIRE.Controllers
         {
             try
             {
-                _logger.LogInformation("📧 Recibida solicitud de programación de email. CorrelationId: {CorrelationId}", emailTask.CorrelationId);
+                _logger.LogInformation("Recibida solicitud de programación de email. CorrelationId: {CorrelationId}", emailTask.CorrelationId);
                 
                 // Programar tarea de email con delay de 30 segundos
                 var jobId = _hangfire.Schedule<IEmailJobService>(
@@ -89,7 +89,7 @@ namespace SERVERHANGFIRE.Controllers
                     TimeSpan.FromSeconds(45) 
                 );
 
-                _logger.LogInformation("✅ Tarea de email programada exitosamente. JobId: {JobId}, CorrelationId: {CorrelationId}", jobId, emailTask.CorrelationId);
+                _logger.LogInformation("Tarea de email programada exitosamente. JobId: {JobId}, CorrelationId: {CorrelationId}", jobId, emailTask.CorrelationId);
 
                 return Ok(new
                 {

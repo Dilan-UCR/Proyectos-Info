@@ -17,7 +17,7 @@ namespace SERVERHANGFIRE.Flows.Services
         {
             try
             {
-                _logger.LogInformation("🚀 Iniciando envío de mensaje. CorrelationId: {CorrelationId}, Phone: {Phone}", correlationId, phoneNumber);
+                _logger.LogInformation("Iniciando envío de mensaje. CorrelationId: {CorrelationId}, Phone: {Phone}", correlationId, phoneNumber);
 
                 // Aquí harías la llamada al Messaging Server (Node.js)
                 // Por ahora solo simulamos
@@ -29,16 +29,16 @@ namespace SERVERHANGFIRE.Flows.Services
                     CustomerId = customerId
                 };
 
-                _logger.LogInformation("📱 Simulando envío de mensaje: {@MessagingPayload}", messagingPayload);
+                _logger.LogInformation("Simulando envío de mensaje: {@MessagingPayload}", messagingPayload);
                 
                 // Simular delay de procesamiento
                 await Task.Delay(2000);
                 
-                _logger.LogInformation("✅ Mensaje enviado exitosamente. CorrelationId: {CorrelationId}", correlationId);
+                _logger.LogInformation(" Mensaje enviado exitosamente. CorrelationId: {CorrelationId}", correlationId);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
+                _logger.LogError(ex, " Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
                 throw; // Re-lanzar para que Hangfire marque el job como fallido
             }
         }
