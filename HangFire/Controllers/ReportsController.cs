@@ -1,7 +1,6 @@
 using Hangfire;
 using Microsoft.AspNetCore.Mvc;
 using SERVERHANGFIRE.Flows.DTOs;
-using SERVERHANGFIRE.Flows.Services;
 using SERVERHANGFIRE.Flows.Services.Interfaces;
 using SERVERHANGFIRE.Flows.Validation;
 
@@ -12,20 +11,15 @@ namespace SERVERHANGFIRE.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly IBackgroundJobClient _hangfire;
-        private readonly IHttpClientService _httpClientService;
-        private readonly IKafkaProducerService _kafkaProducer;
+        
         private readonly ILogger<ReportsController> _logger;
 
         public ReportsController(
             IBackgroundJobClient hangfire,
-            IKafkaProducerService kafkaProducer,
-            ILogger<ReportsController> logger,
-            IHttpClientService httpClientService)
+            ILogger<ReportsController> logger)
         {
             _hangfire = hangfire;
-            _kafkaProducer = kafkaProducer;
             _logger = logger;
-            _httpClientService = httpClientService;
         }
 
         [HttpPost]
@@ -119,9 +113,10 @@ namespace SERVERHANGFIRE.Controllers
                 var jobId = _hangfire.Schedule<IMessagingJobService>(
                     job => job.SendMessageAsync(
                         messagingTask.CorrelationId,
-                        messagingTask.PhoneNumber,
-                        messagingTask.Message,
-                        messagingTask.CustomerId
+                        messagingTask.ChatId,
+                        messagingTask.Platform,
+                        messagingTask.Message
+
                     ),
                     TimeSpan.FromSeconds(45) 
                 );
@@ -134,8 +129,8 @@ namespace SERVERHANGFIRE.Controllers
                     CorrelationId = messagingTask.CorrelationId,
                     Status = "Scheduled",
                     ScheduledTime = DateTime.UtcNow.AddSeconds(45),
-                    Message = "Messaging task scheduled successfully",
-                    PhoneNumber = messagingTask.PhoneNumber
+                    Message = "Messaging task scheduled successfully"
+                   
                 });
             }
             catch (Exception ex)

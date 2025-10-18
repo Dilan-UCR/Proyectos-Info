@@ -13,20 +13,20 @@ namespace SERVERHANGFIRE.Flows.Services
             _httpClientService = httpClientService;
         }
 
-        public async Task SendMessageAsync(string correlationId, string phoneNumber, string message, int customerId)
+        public async Task SendMessageAsync(string correlationId, string chatId,  string  platform, string message)
         {
             try
             {
-                _logger.LogInformation("Iniciando envío de mensaje. CorrelationId: {CorrelationId}, Phone: {Phone}", correlationId, phoneNumber);
+                _logger.LogInformation("Iniciando envío de mensaje. CorrelationId: {CorrelationId}, chatId: {chat}", correlationId, chatId);
 
                 // Aquí harías la llamada al Messaging Server (Node.js)
                 // Por ahora solo simulamos
                 var messagingPayload = new
                 {
                     CorrelationId = correlationId,
-                    PhoneNumber = phoneNumber,
-                    Message = message,
-                    CustomerId = customerId
+                    ChatId = chatId,
+                    Plaform = platform,
+                    Message = message
                 };
 
                 _logger.LogInformation("Simulando envío de mensaje: {@MessagingPayload}", messagingPayload);
