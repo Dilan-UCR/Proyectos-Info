@@ -10,9 +10,8 @@ class Messages:
     # errores
     FILE_NOT_FOUND = "Archivo no encontrado"
     INTERNAL_SERVER_ERROR = "Error interno del servidor"
-    INVALID_EXTENSION = "Extensión de archivo no permitida"
+    INVALID_FILE_TYPE = "Extensión de archivo no permitida"
     FILE_TOO_LARGE = "El archivo excede el tamaño máximo permitido"    
-    FILE_NOT_FOUND = "Archivo no encontrado"
     UNEXPECTED_ERROR = "Ocurrió un error interno en el servidor"
     FILE_ALREADY_EXISTS = "El archivo ya existe"
 

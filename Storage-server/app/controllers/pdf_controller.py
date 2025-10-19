@@ -29,8 +29,11 @@ async def get_pdf(
     correlation_id: str,
     pdf_service: PdfService = Depends(get_pdf_service)
 ):
+    # Limpiar el correlation_id de espacios en blanco y saltos de línea
+    correlation_id = correlation_id.strip()
+    
     file_path, clean_name = await pdf_service.retrieve_pdf(correlation_id)
-
+    
     return FileResponse(
         path=file_path,
         media_type="application/pdf",

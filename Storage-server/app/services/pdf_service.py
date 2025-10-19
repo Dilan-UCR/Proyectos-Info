@@ -56,6 +56,7 @@ class PdfService(IPdfService):
 
     async def retrieve_pdf(self, correlation_id: str) -> tuple[str, str]:
         try:
+            
             # Log de inicio de búsqueda
             await kafka_log_info(f"Buscando PDF con correlation_id: {correlation_id}", correlation_id)
             
@@ -64,6 +65,7 @@ class PdfService(IPdfService):
 
             # Buscar la ruta del archivo
             file_path = find_pdf_by_correlation_id(correlation_id)
+            
             if not file_path:
                 await kafka_log_error(f"PDF no encontrado para correlation_id: {correlation_id}", correlation_id)
                 raise NotFoundException(Messages.FILE_NOT_FOUND)
