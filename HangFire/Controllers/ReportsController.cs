@@ -11,7 +11,7 @@ namespace SERVERHANGFIRE.Controllers
     public class ReportsController : ControllerBase
     {
         private readonly IBackgroundJobClient _hangfire;
-        
+
         private readonly ILogger<ReportsController> _logger;
 
         public ReportsController(
@@ -44,9 +44,9 @@ namespace SERVERHANGFIRE.Controllers
                         correlationId,
                         request.Products
                     ),
-                    TimeSpan.FromMinutes(1) 
+                    TimeSpan.FromMinutes(1)
                 );
-                
+
                 _logger.LogInformation("Solicitud encolada. CorrelationId={CorrelationId}", correlationId);
 
                 return Ok(new
@@ -70,7 +70,7 @@ namespace SERVERHANGFIRE.Controllers
             try
             {
                 _logger.LogInformation("Recibida solicitud de programación de email. CorrelationId: {CorrelationId}", emailTask.CorrelationId);
-                
+
                 var jobId = _hangfire.Schedule<IEmailJobService>(
                     job => job.SendEmailAsync(
                         emailTask.CorrelationId,
@@ -106,15 +106,22 @@ namespace SERVERHANGFIRE.Controllers
         {
             try
             {
+                // Agregar logs para ver qué está llegando
+                _logger.LogInformation("Datos recibidos - CorrelationId: '{CorrelationId}', PhoneNumber: '{PhoneNumber}', Message: '{Message}', CustomerId: {CustomerId}",
+                    messagingTask.CorrelationId ?? "NULL",
+                    messagingTask.PhoneNumber ?? "NULL",
+                    messagingTask.Message ?? "NULL",
+                    messagingTask.CustomerId);
+
                 _logger.LogInformation("Recibida solicitud de programación de messaging. CorrelationId: {CorrelationId}", messagingTask.CorrelationId);
 
+                // Usar PhoneNumber como ChatId y establecer Platform por defecto
                 var jobId = _hangfire.Schedule<IMessagingJobService>(
                     job => job.SendMessageAsync(
                         messagingTask.CorrelationId,
-                        messagingTask.ChatId,
-                        messagingTask.Platform,
+                        messagingTask.PhoneNumber,  // Usar PhoneNumber como ChatId
+                        "telegram",  // Platform por defecto
                         messagingTask.Message
-
                     ),
                     TimeSpan.FromMinutes(1)
                 );
@@ -127,8 +134,8 @@ namespace SERVERHANGFIRE.Controllers
                     CorrelationId = messagingTask.CorrelationId,
                     Status = "Scheduled",
                     ScheduledTime = DateTime.UtcNow.AddMinutes(1),
-                    Message = "Messaging task scheduled successfully"
-                   
+                    Message = "Messaging task scheduled successfully",
+                    PhoneNumber = messagingTask.PhoneNumber
                 });
             }
             catch (Exception ex)

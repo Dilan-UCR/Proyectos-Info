@@ -1,6 +1,6 @@
 export interface SendMessageRequest {
-  correlationId: string;
-  chatId: string;
-  platform: string;
-  message: string;
+  CorrelationId: string;
+  ChatId: string;
+  Platform: string;
+  Message: string;
 }

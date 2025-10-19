@@ -11,18 +11,31 @@ export function createMessagingController(
     kafka = kafkaService
 ){
     return async function sendMessage(req: Request, res: Response) {
+      
         const body: SendMessageRequest = req.body;
-        logInfo("Nueva solicitud de envío recibida", { correlationId: body.correlationId, platform: body.platform });
+        
+        logInfo("Nueva solicitud de envío recibida", { correlationId: body.CorrelationId, platform: body.Platform });
+        
+      
+        if (!body.CorrelationId) {
+            console.log('correlationId está vacío');
+            logError("correlationId es requerido", { receivedData: req.body });
+            return res.status(400).json({ 
+                error: 'correlationId es requerido',
+                receivedData: req.body 
+            });
+        }
         try {
-            const fileBuffer = await storage.getFile(body.correlationId);
+            const fileBuffer = await storage.getFile(body.CorrelationId);
+            
             if (!fileBuffer) {
-                logError("Archivo no encontrado", { correlationId: body.correlationId });
-                await kafka.log("error", { correlationId: body.correlationId, message: "Archivo no encontrado" });
+                await kafka.log("error", { correlationId: body.CorrelationId, message: "Archivo no encontrado" });
                 return res.status(404).json({ error: "Archivo no encontrado" });
             }
-            if (body.platform === "telegram") {
-                await telegram.sendFile(body.chatId, fileBuffer, body.message);
-            }else {
+            
+            if (body.Platform === "telegram") {
+                await telegram.sendFile(body.ChatId, fileBuffer, body.Message);
+            } else {
                 return res.status(400).json({ error: "Plataforma no soportada" });
             }
 
@@ -32,17 +45,15 @@ export function createMessagingController(
             };
 
             await kafka.log("success", {
-                correlationId: body.correlationId,
-                platform: body.platform,
-                chatId: body.chatId,
+                correlationId: body.CorrelationId,
+                platform: body.Platform,
+                chatId: body.ChatId,
                 message: response.message,
             });
-
-            logInfo("Archivo enviado correctamente", { correlationId: body.correlationId });
             res.status(200).json(response);
         } catch (error: unknown) {
-            logError("Error al procesar envío", { error: getErrorMessage(error) });
-            await kafka.log("error", { correlationId: body.correlationId, error: getErrorMessage(error) });
+            logError("Error al procesar envío", { error: getErrorMessage(error), correlationId: body.CorrelationId });
+            await kafka.log("error", { correlationId: body.CorrelationId, error: getErrorMessage(error) });
             res.status(500).json({ error: "Error interno del servidor" });
         }
     }

@@ -1,4 +1,4 @@
-﻿using Confluent.Kafka;
+using Confluent.Kafka;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -91,18 +91,16 @@ namespace PDF_Server.Controllers
         {
             try
             {
-                
-                // Programar tarea de email
+
                 var emailTask = new EmailTaskDto
                 {
                     CorrelationId = request.CorrelationId,
                     ToEmail = _notificationDefaults.Email,
                     Subject = _notificationDefaults.EmailSubject,
                     Message = $"{_notificationDefaults.SmsMessage} Cliente: {request.CustomerId}, Archivo: {fileName}",
-                    CustomerId = request.CustomerId,
-                    PdfFileName = fileName
+                    CustomerId = request.CustomerId
                 };
-                
+             
                 bool emailResult = await _hangfireTaskService.ScheduleEmailTaskAsync(emailTask);
                 Console.WriteLine($"Tarea EMAIL programada: {emailResult}");
            
@@ -111,10 +109,8 @@ namespace PDF_Server.Controllers
                     CorrelationId = request.CorrelationId,
                     PhoneNumber = _notificationDefaults.PhoneNumber,
                     Message = $"{_notificationDefaults.SmsMessage} Cliente: {request.CustomerId}, Archivo: {fileName}",
-                    CustomerId = request.CustomerId,
-                    PdfFileName = fileName
+                    CustomerId = request.CustomerId
                 };
-                
                 bool messagingResult = await _hangfireTaskService.ScheduleMessagingTaskAsync(messagingTask);
                
             }

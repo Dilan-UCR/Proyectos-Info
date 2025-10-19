@@ -17,42 +17,46 @@ namespace SERVERHANGFIRE.Flows.Services
         {
             try
             {
-                _logger.LogInformation(" Iniciando envío de mensaje. CorrelationId: {CorrelationId}, chatId: {chat}", correlationId, chatId);
+                _logger.LogInformation("Parámetros recibidos en SendMessageAsync - CorrelationId: '{CorrelationId}', ChatId: '{ChatId}', Platform: '{Platform}', Message: '{Message}'",
+                    correlationId ?? "NULL",
+                    chatId ?? "NULL",
+                    platform ?? "NULL",
+                    message ?? "NULL");
+
 
                 var messagingPayload = new
                 {
                     CorrelationId = correlationId,
                     ChatId = chatId,
-                    Platform = platform, 
+                    Platform = platform,
                     Message = message
                 };
 
-                
                 var messagingApiUrl = "http://localhost:8002/api/messaging/send";
-                
-                _logger.LogInformation(" Enviando mensaje a API: {MessagingApiUrl}, Payload: {@MessagingPayload}", messagingApiUrl, messagingPayload);
-                
+
+
                 var response = await _httpClientService.PostAsync(messagingApiUrl, messagingPayload);
 
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    _logger.LogInformation(" Mensaje enviado exitosamente. CorrelationId: {CorrelationId}, Response: {Response}", 
+                    _logger.LogInformation("Mensaje enviado exitosamente. CorrelationId: {CorrelationId}, Response: {Response}",
                         correlationId, responseContent);
                 }
                 else
                 {
                     var errorContent = await response.Content.ReadAsStringAsync();
-                    _logger.LogError(" Error en Messaging API. Status: {StatusCode}, Error: {Error}, CorrelationId: {CorrelationId}", 
+                    _logger.LogError("Error en Messaging API. Status: {StatusCode}, Error: {Error}, CorrelationId: {CorrelationId}",
                         response.StatusCode, errorContent, correlationId);
                     throw new Exception($"Messaging API returned {response.StatusCode}: {errorContent}");
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, " Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
+                _logger.LogError(ex, "Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
                 throw;
             }
+
         }
     }
 }

@@ -6,6 +6,6 @@ namespace PDF_Server.Flows.DTOs
         public string PhoneNumber { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
         public int CustomerId { get; set; }
-        public string PdfFileName { get; set; } = string.Empty;
+        //public string PdfFileName { get; set; } = string.Empty;
     }
 }
