@@ -1,0 +1,32 @@
+{
+  "name": "messages-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "get-chatid": "ts-node getChatId.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.2",
+    "kafkajs": "^2.2.4",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.9.36",
+    "@types/express": "^5.0.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.8.1",
+    "@types/node-telegram-bot-api": "^0.64.11",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
