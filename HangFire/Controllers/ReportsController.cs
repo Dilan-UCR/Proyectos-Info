@@ -71,7 +71,6 @@ namespace SERVERHANGFIRE.Controllers
             {
                 _logger.LogInformation("Recibida solicitud de programación de email. CorrelationId: {CorrelationId}", emailTask.CorrelationId);
                 
-                // Programar tarea de email con delay de 30 segundos
                 var jobId = _hangfire.Schedule<IEmailJobService>(
                     job => job.SendEmailAsync(
                         emailTask.CorrelationId,
@@ -80,7 +79,7 @@ namespace SERVERHANGFIRE.Controllers
                         emailTask.Message,
                         emailTask.CustomerId
                     ),
-                    TimeSpan.FromSeconds(45) 
+                    TimeSpan.FromMinutes(1)
                 );
 
                 _logger.LogInformation("Tarea de email programada exitosamente. JobId: {JobId}, CorrelationId: {CorrelationId}", jobId, emailTask.CorrelationId);
@@ -90,7 +89,7 @@ namespace SERVERHANGFIRE.Controllers
                     JobId = jobId,
                     CorrelationId = emailTask.CorrelationId,
                     Status = "Scheduled",
-                    ScheduledTime = DateTime.UtcNow.AddSeconds(30),
+                    ScheduledTime = DateTime.UtcNow.AddMinutes(1),
                     Message = "Email task scheduled successfully",
                     EmailTo = emailTask.ToEmail
                 });
@@ -108,8 +107,7 @@ namespace SERVERHANGFIRE.Controllers
             try
             {
                 _logger.LogInformation("Recibida solicitud de programación de messaging. CorrelationId: {CorrelationId}", messagingTask.CorrelationId);
-                
-                // Programar tarea de messaging con delay de 45 segundos
+
                 var jobId = _hangfire.Schedule<IMessagingJobService>(
                     job => job.SendMessageAsync(
                         messagingTask.CorrelationId,
@@ -118,7 +116,7 @@ namespace SERVERHANGFIRE.Controllers
                         messagingTask.Message
 
                     ),
-                    TimeSpan.FromSeconds(45) 
+                    TimeSpan.FromMinutes(1)
                 );
 
                 _logger.LogInformation("Tarea de messaging programada exitosamente. JobId: {JobId}, CorrelationId: {CorrelationId}", jobId, messagingTask.CorrelationId);
@@ -128,7 +126,7 @@ namespace SERVERHANGFIRE.Controllers
                     JobId = jobId,
                     CorrelationId = messagingTask.CorrelationId,
                     Status = "Scheduled",
-                    ScheduledTime = DateTime.UtcNow.AddSeconds(45),
+                    ScheduledTime = DateTime.UtcNow.AddMinutes(1),
                     Message = "Messaging task scheduled successfully"
                    
                 });

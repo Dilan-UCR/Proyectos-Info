@@ -17,10 +17,8 @@ namespace SERVERHANGFIRE.Flows.Services
         {
             try
             {
-                _logger.LogInformation("🚀 Iniciando envío de email. CorrelationId: {CorrelationId}, Email: {Email}", correlationId, toEmail);
+                _logger.LogInformation("Iniciando envío de email. CorrelationId: {CorrelationId}, Email: {Email}", correlationId, toEmail);
 
-                // Aquí harías la llamada al Email Server (Python)
-                // Por ahora solo simulamos
                 var emailPayload = new
                 {
                     CorrelationId = correlationId,
@@ -30,17 +28,30 @@ namespace SERVERHANGFIRE.Flows.Services
                     CustomerId = customerId
                 };
 
-                _logger.LogInformation("📧 Simulando envío de email: {@EmailPayload}", emailPayload);
+                var emailApiUrl = "http://localhost:8001/api/email/send";
                 
-                // Simular delay de procesamiento
-                await Task.Delay(2000);
+                _logger.LogInformation("Enviando email a API: {EmailApiUrl}, Payload: {@EmailPayload}", emailApiUrl, emailPayload);
                 
-                _logger.LogInformation("✅ Email enviado exitosamente. CorrelationId: {CorrelationId}", correlationId);
+                var response = await _httpClientService.PostAsync(emailApiUrl, emailPayload);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    _logger.LogInformation(" Email enviado exitosamente. CorrelationId: {CorrelationId}, Response: {Response}", 
+                        correlationId, responseContent);
+                }
+                else
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    _logger.LogError(" Error en Email API. Status: {StatusCode}, Error: {Error}, CorrelationId: {CorrelationId}", 
+                        response.StatusCode, errorContent, correlationId);
+                    throw new Exception($"Email API returned {response.StatusCode}: {errorContent}");
+                }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error enviando email. CorrelationId: {CorrelationId}", correlationId);
-                throw; // Re-lanzar para que Hangfire marque el job como fallido
+                _logger.LogError(ex, " Error enviando email. CorrelationId: {CorrelationId}", correlationId);
+                throw; 
             }
         }
     }

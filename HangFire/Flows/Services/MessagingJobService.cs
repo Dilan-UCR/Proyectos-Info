@@ -13,33 +13,45 @@ namespace SERVERHANGFIRE.Flows.Services
             _httpClientService = httpClientService;
         }
 
-        public async Task SendMessageAsync(string correlationId, string chatId,  string  platform, string message)
+        public async Task SendMessageAsync(string correlationId, string chatId, string platform, string message)
         {
             try
             {
-                _logger.LogInformation("Iniciando envío de mensaje. CorrelationId: {CorrelationId}, chatId: {chat}", correlationId, chatId);
+                _logger.LogInformation(" Iniciando envío de mensaje. CorrelationId: {CorrelationId}, chatId: {chat}", correlationId, chatId);
 
-                // Aquí harías la llamada al Messaging Server (Node.js)
-                // Por ahora solo simulamos
                 var messagingPayload = new
                 {
                     CorrelationId = correlationId,
                     ChatId = chatId,
-                    Plaform = platform,
+                    Platform = platform, 
                     Message = message
                 };
 
-                _logger.LogInformation("Simulando envío de mensaje: {@MessagingPayload}", messagingPayload);
                 
-                // Simular delay de procesamiento
-                await Task.Delay(2000);
+                var messagingApiUrl = "http://localhost:8002/api/messaging/send";
                 
-                _logger.LogInformation(" Mensaje enviado exitosamente. CorrelationId: {CorrelationId}", correlationId);
+                _logger.LogInformation(" Enviando mensaje a API: {MessagingApiUrl}, Payload: {@MessagingPayload}", messagingApiUrl, messagingPayload);
+                
+                var response = await _httpClientService.PostAsync(messagingApiUrl, messagingPayload);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    _logger.LogInformation(" Mensaje enviado exitosamente. CorrelationId: {CorrelationId}, Response: {Response}", 
+                        correlationId, responseContent);
+                }
+                else
+                {
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    _logger.LogError(" Error en Messaging API. Status: {StatusCode}, Error: {Error}, CorrelationId: {CorrelationId}", 
+                        response.StatusCode, errorContent, correlationId);
+                    throw new Exception($"Messaging API returned {response.StatusCode}: {errorContent}");
+                }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, " Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
-                throw; // Re-lanzar para que Hangfire marque el job como fallido
+                throw;
             }
         }
     }
