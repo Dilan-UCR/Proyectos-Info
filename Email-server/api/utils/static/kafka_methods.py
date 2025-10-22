@@ -6,19 +6,19 @@ class KafkaLogger:
     
     @staticmethod
     async def log_info(correlation_id:str, customer_id: str, recipient_email:str, message: str):
-        await KafkaLogger._send_log("INFO", correlation_id, recipient_email, message)
+        await KafkaLogger._send_log("INFO", correlation_id, customer_id, recipient_email, message)
     
     @staticmethod
     async def log_warning(correlation_id:str, customer_id: str, recipient_email:str, message: str):
-        await KafkaLogger._send_log("WARNING", correlation_id, recipient_email, message)
+        await KafkaLogger._send_log("WARNING", correlation_id, customer_id, recipient_email, message)
     
     @staticmethod
     async def log_error(correlation_id:str, customer_id: str, recipient_email:str, message: str):
-        await KafkaLogger._send_log("ERROR", correlation_id, recipient_email, message)
+        await KafkaLogger._send_log("ERROR", correlation_id, customer_id, recipient_email, message)
     
     @staticmethod
     async def log_success(correlation_id:str, customer_id: str, recipient_email:str, message: str):
-        await KafkaLogger._send_log("SUCCESS", correlation_id, recipient_email, message)
+        await KafkaLogger._send_log("SUCCESS", correlation_id, customer_id, recipient_email, message)
     
     @staticmethod
     async def _send_log(level: str, correlation_id:str, customer_id: str, recipient_email:str, message: str):

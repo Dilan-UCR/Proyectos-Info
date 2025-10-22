@@ -4,6 +4,7 @@ from api.utils.functions.email_builder import build_email_body
 from api.utils.functions.email_sender import build_email_message, send_email_smtp
 from api.exceptions.base_exceptions import (EmailSendException, EmailRecipientRejectedException, EmailAuthenticationException)
 from api.utils.constants.messages import Messages
+from api.utils.static.kafka_methods import KafkaLogger
 
 class EmailService(IEmailService):
 
@@ -14,7 +15,21 @@ class EmailService(IEmailService):
             
             msg = build_email_message(email_request, body_html, pdf_file)
             
+            await KafkaLogger.log_info(
+                correlation_id=email_request.correlation_id,
+                customer_id=str(email_request.customer_id),
+                recipient_email=email_request.recipient_email,
+                message=Messages.SENDING_EMAIL_TO_RECIPIENT
+            )
+            
             await send_email_smtp(msg, email_request.recipient_email)
+            
+            await KafkaLogger.log_success(
+                correlation_id=email_request.correlation_id,
+                customer_id=str(email_request.customer_id),
+                recipient_email=email_request.recipient_email,
+                message=Messages.EMAIL_SENT_SUCCESSFULLY
+            )
             
             return {
                 "status": "success",
@@ -26,8 +41,26 @@ class EmailService(IEmailService):
             error_message = str(e).lower()
             
             if "email destinatario rechazado" in error_message or "recipients refused" in error_message:
+                await KafkaLogger.log_error(
+                    correlation_id=email_request.correlation_id,
+                    customer_id=str(email_request.customer_id),
+                    recipient_email=email_request.recipient_email,
+                    message=Messages.ERROR_EMAIL_INVALID_RECIPIENT
+                )
                 raise EmailRecipientRejectedException(Messages.EMAIL_REJECTED_RECIPIENT)
             elif "error de autenticación" in error_message or "authentication" in error_message:
+                await KafkaLogger.log_error(
+                    correlation_id=email_request.correlation_id,
+                    customer_id=str(email_request.customer_id),
+                    recipient_email=email_request.recipient_email,
+                    message=Messages.ERROR_SMTP_CONNECTION
+                )
                 raise EmailAuthenticationException(Messages.EMAIL_AUTHENTICATION_ERROR)
             else:
+                await KafkaLogger.log_error(
+                    correlation_id=email_request.correlation_id,
+                    customer_id=str(email_request.customer_id),
+                    recipient_email=email_request.recipient_email,
+                    message=Messages.ERROR_SENDING_EMAIL
+                )
                 raise EmailSendException(Messages.EMAIL_SEND_FAILED)
