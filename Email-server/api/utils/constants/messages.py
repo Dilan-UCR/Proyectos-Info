@@ -28,10 +28,11 @@ class Messages:
     RECIPIENT_EMAIL_REQUIRED = "El email del destinatario es requerido"
 
     # Mensajes de operaciones exitosas para kafka
+    REQUEST_RECEIVED = "Solicitud de envío de correo recibida"
     REQUESTING_FILE_FROM_STORAGE = "Solicitando archivo al Storage Server"
     FILE_RETRIEVED_SUCCESSFULLY = "Archivo recuperado correctamente del Storage Server"
     SENDING_EMAIL_TO_RECIPIENT = "Enviando correo al destinatario"
-    EMAIL_SENT_SUCCESSFULLY = "Correo enviado correctamente"
+    EMAIL_SENT_SUCCESSFULLY = "Correo enviado correctamente al destinatario"
     
     # Mensajes de errores para kafka
     ERROR_REQUESTING_FILE = "Error al solicitar archivo del Storage Server"

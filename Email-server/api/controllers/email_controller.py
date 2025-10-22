@@ -2,6 +2,8 @@ from fastapi import APIRouter, status, Depends
 from api.models.email_model import EmailSendRequest
 from api.services.email_service import EmailService
 from api.services.storage_service import StorageService
+from api.utils.static.kafka_methods import KafkaLogger
+from api.utils.constants.messages import Messages
 
 router = APIRouter(
     prefix="/api/email",
@@ -21,7 +23,14 @@ async def send_email(
     storage_service: StorageService = Depends(get_storage_service)
 ):
     
-    pdf_file = await storage_service.get_file(request.correlation_id)
+    await KafkaLogger.log_info(
+        correlation_id=request.correlation_id,
+        customer_id=str(request.customer_id),
+        recipient_email=request.recipient_email,
+        message=Messages.REQUEST_RECEIVED
+    )
+    
+    pdf_file = await storage_service.get_file(request.correlation_id, request.customer_id, request.recipient_email)
     
     response = await email_service.send_email(request, pdf_file)
     
