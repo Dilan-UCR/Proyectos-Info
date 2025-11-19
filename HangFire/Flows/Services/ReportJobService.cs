@@ -72,7 +72,7 @@ namespace SERVERHANGFIRE.Flows.Services
                 log.Payload += $", Error: {ex.Message}";
                 await _kafkaProducer.SendLogAsync(log);
                 _logger.LogError(ex, "Error inesperado. CorrelationId={CorrelationId}", correlationId);
-                throw; // Hangfire manejará el reintento
+                throw; 
             }
         }
     }

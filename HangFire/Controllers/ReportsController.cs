@@ -106,7 +106,6 @@ namespace SERVERHANGFIRE.Controllers
         {
             try
             {
-                // Agregar logs para ver qué está llegando
                 _logger.LogInformation("Datos recibidos - CorrelationId: '{CorrelationId}', PhoneNumber: '{PhoneNumber}', Message: '{Message}', CustomerId: {CustomerId}",
                     messagingTask.CorrelationId ?? "NULL",
                     messagingTask.PhoneNumber ?? "NULL",
@@ -115,12 +114,11 @@ namespace SERVERHANGFIRE.Controllers
 
                 _logger.LogInformation("Recibida solicitud de programación de messaging. CorrelationId: {CorrelationId}", messagingTask.CorrelationId);
 
-                // Usar PhoneNumber como ChatId y establecer Platform por defecto
                 var jobId = _hangfire.Schedule<IMessagingJobService>(
                     job => job.SendMessageAsync(
                         messagingTask.CorrelationId,
-                        messagingTask.PhoneNumber,  // Usar PhoneNumber como ChatId
-                        "telegram",  // Platform por defecto
+                        messagingTask.PhoneNumber,  
+                        "telegram",  
                         messagingTask.Message
                     ),
                     TimeSpan.FromMinutes(1)
