@@ -1,0 +1,242 @@
+// Ejemplos de mensajes JSON para producir en cada tópico de Kafka
+
+// ============================================
+// TEMA: logs-email
+// Descripción: Logs de envíos de correo electrónico
+// ============================================
+
+// Ejemplo 1: Email exitoso
+{
+  "recipient": "cliente@example.com",
+  "subject": "Confirmación de Compra",
+  "body": "Su pedido #ORD-2025-001 ha sido confirmado. Total: $299.99",
+  "sentAt": "2025-11-18T10:30:00Z",
+  "isSuccessful": true,
+  "failureReason": null
+}
+
+// Ejemplo 2: Email fallido
+{
+  "recipient": "invalid@",
+  "subject": "Notificación de Sistema",
+  "body": "Se requiere su atención",
+  "sentAt": "2025-11-18T10:31:00Z",
+  "isSuccessful": false,
+  "failureReason": "Formato de email inválido"
+}
+
+
+// ============================================
+// TEMA: logs-hangfire
+// Descripción: Logs de jobs programados de Hangfire
+// ============================================
+
+// Ejemplo 1: Job exitoso
+{
+  "jobId": "550e8400-e29b-41d4-a716-446655440000",
+  "jobName": "GenerarReporteVentasMensuales",
+  "status": "Succeeded",
+  "startedAt": "2025-11-18T09:00:00Z",
+  "completedAt": "2025-11-18T09:15:30Z",
+  "durationSeconds": 930.5,
+  "errorMessage": null
+}
+
+// Ejemplo 2: Job fallido
+{
+  "jobId": "660e8400-e29b-41d4-a716-446655440001",
+  "jobName": "ImportarDatosProveedores",
+  "status": "Failed",
+  "startedAt": "2025-11-18T10:00:00Z",
+  "completedAt": "2025-11-18T10:05:15Z",
+  "durationSeconds": 315.25,
+  "errorMessage": "Connection timeout a base de datos de proveedores"
+}
+
+// Ejemplo 3: Job en procesamiento
+{
+  "jobId": "770e8400-e29b-41d4-a716-446655440002",
+  "jobName": "SincronizarInventario",
+  "status": "Processing",
+  "startedAt": "2025-11-18T11:00:00Z",
+  "completedAt": null,
+  "durationSeconds": 0,
+  "errorMessage": null
+}
+
+
+// ============================================
+// TEMA: logs-pdf
+// Descripción: Logs de generación de documentos PDF
+// ============================================
+
+// Ejemplo 1: PDF generado exitosamente
+{
+  "fileName": "factura_INV-2025-001234.pdf",
+  "filePath": "/storage/invoices/2025/11/factura_INV-2025-001234.pdf",
+  "fileSizeBytes": 2097152,
+  "generatedAt": "2025-11-18T10:15:00Z",
+  "isSuccessful": true,
+  "generationError": null
+}
+
+// Ejemplo 2: Error en generación de PDF
+{
+  "fileName": "reporte_trimestral.pdf",
+  "filePath": "/storage/reports/reporte_trimestral.pdf",
+  "fileSizeBytes": 0,
+  "generatedAt": "2025-11-18T10:16:00Z",
+  "isSuccessful": false,
+  "generationError": "Plantilla de PDF no encontrada: /templates/quarterly_report.template"
+}
+
+// Ejemplo 3: PDF grande
+{
+  "fileName": "catalogo_productos_2025.pdf",
+  "filePath": "/storage/catalogs/catalogo_productos_2025.pdf",
+  "fileSizeBytes": 52428800,
+  "generatedAt": "2025-11-18T11:00:00Z",
+  "isSuccessful": true,
+  "generationError": null
+}
+
+
+// ============================================
+// TEMA: logs-storage
+// Descripción: Logs de operaciones de almacenamiento (S3, Azure Blob, etc.)
+// ============================================
+
+// Ejemplo 1: Upload exitoso
+{
+  "bucketName": "empresa-documents",
+  "objectKey": "documentos/contratos/contrato_CLT-2025-005.pdf",
+  "operationType": "Upload",
+  "sizeBytes": 3145728,
+  "operationAt": "2025-11-18T10:20:00Z",
+  "isSuccessful": true,
+  "errorMessage": null
+}
+
+// Ejemplo 2: Download exitoso
+{
+  "bucketName": "empresa-backups",
+  "objectKey": "backups/database/adventureworks_2025-11-18.bak",
+  "operationType": "Download",
+  "sizeBytes": 1073741824,
+  "operationAt": "2025-11-18T10:21:00Z",
+  "isSuccessful": true,
+  "errorMessage": null
+}
+
+// Ejemplo 3: Delete
+{
+  "bucketName": "empresa-temp",
+  "objectKey": "temp/upload_sessions/session_12345_old.tmp",
+  "operationType": "Delete",
+  "sizeBytes": 0,
+  "operationAt": "2025-11-18T10:22:00Z",
+  "isSuccessful": true,
+  "errorMessage": null
+}
+
+// Ejemplo 4: Error en operación de almacenamiento
+{
+  "bucketName": "empresa-documents",
+  "objectKey": "documentos/contratos/contrato_grande.pdf",
+  "operationType": "Upload",
+  "sizeBytes": 5368709120,
+  "operationAt": "2025-11-18T10:23:00Z",
+  "isSuccessful": false,
+  "errorMessage": "File exceeds maximum size limit of 5GB"
+}
+
+
+// ============================================
+// TEMA: messages-logs
+// Descripción: Logs de mensajes del sistema
+// ============================================
+
+// Ejemplo 1: Mensaje de usuario
+{
+  "senderId": "user_002",
+  "receiverId": "user_003",
+  "messageContent": "¿Puedes revisar el reporte de ventas del mes anterior?",
+  "sentAt": "2025-11-18T10:25:00Z",
+  "isRead": false,
+  "messageType": "User"
+}
+
+// Ejemplo 2: Alerta del sistema
+{
+  "senderId": "system",
+  "receiverId": "admin_001",
+  "messageContent": "Advertencia: Uso de CPU en servidor de BD alcanzó 85%",
+  "sentAt": "2025-11-18T10:26:00Z",
+  "isRead": true,
+  "messageType": "Alert"
+}
+
+// Ejemplo 3: Mensaje de sistema
+{
+  "senderId": "system",
+  "receiverId": "all_users",
+  "messageContent": "Mantenimiento programado: 2025-11-20 02:00 - 04:00 UTC. El sistema no estará disponible durante este período.",
+  "sentAt": "2025-11-18T10:27:00Z",
+  "isRead": false,
+  "messageType": "System"
+}
+
+// Ejemplo 4: Notificación
+{
+  "senderId": "notification_service",
+  "receiverId": "user_001",
+  "messageContent": "Tu pedido #ORD-2025-001234 ha sido enviado. Número de seguimiento: TRK-2025-556677",
+  "sentAt": "2025-11-18T10:28:00Z",
+  "isRead": true,
+  "messageType": "Notification"
+}
+
+
+// ============================================
+// CÓMO ENVIAR ESTOS MENSAJES A KAFKA
+// ============================================
+
+/*
+Usando kafka-console-producer.sh:
+
+1. Conectar al broker Kafka:
+   kafka-console-producer.sh --broker-list 48.211.170.113:9092 --topic logs-email
+
+2. Pegar el JSON de ejemplo y presionar Enter
+
+3. Para salir: Ctrl+C
+
+Alternativa usando Python:
+   from kafka import KafkaProducer
+   import json
+   
+   producer = KafkaProducer(
+       bootstrap_servers=['48.211.170.113:9092'],
+       value_serializer=lambda v: json.dumps(v).encode('utf-8')
+   )
+   
+   message = {...}
+   producer.send('logs-email', message)
+   producer.flush()
+
+Alternativa usando .NET:
+   using Confluent.Kafka;
+   
+   var config = new ProducerConfig { BootstrapServers = "48.211.170.113:9092" };
+   
+   using (var producer = new ProducerBuilder<string, string>(config).Build())
+   {
+       var message = new Message<string, string> 
+       { 
+           Key = "key", 
+           Value = jsonString 
+       };
+       
+       var result = await producer.ProduceAsync("logs-email", message);
+   }
+*/
