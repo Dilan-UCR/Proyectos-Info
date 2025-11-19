@@ -23,7 +23,8 @@ async def send_email(
     storage_service: StorageService = Depends(get_storage_service)
 ):
     
-    await KafkaLogger.log_info(
+    # Log 1: Solicitud recibida (no bloqueante)
+    KafkaLogger.log_info(
         correlation_id=request.correlation_id,
         customer_id=str(request.customer_id),
         recipient_email=request.recipient_email,

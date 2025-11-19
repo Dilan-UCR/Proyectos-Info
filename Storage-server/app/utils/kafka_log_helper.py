@@ -29,7 +29,12 @@ class KafkaLogger:
                 message=message,
                 correlation_id=correlation_id
             )
-            await kafka_service.send_log(log_dto)
+            # Enviar de forma no bloqueante con timeout
+            import asyncio
+            await asyncio.wait_for(kafka_service.send_log(log_dto), timeout=3.0)
+        except asyncio.TimeoutError:
+            print(f"[KafkaLogger] Timeout al enviar log a Kafka")
+            print(f"[KafkaLogger] Log: [{level}] {message} (CorrelationId: {correlation_id})")
         except Exception as e:
             print(f"[KafkaLogger] Error al enviar log a Kafka: {e}")
             print(f"[KafkaLogger] Log que falló: [{level}] {message} (CorrelationId: {correlation_id})")
