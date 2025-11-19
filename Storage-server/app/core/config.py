@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     MAX_FILE_SIZE: int
     ALLOWED_EXTENSIONS: List[str]
 
+    KAFKA_ENABLED: bool = os.getenv("KAFKA_ENABLED", "true").lower() == "true"
     KAFKA_SECURITY_PROTOCOL: str
     KAFKA_BOOTSTRAP_SERVERS: str = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
     KAFKA_LOG_TOPIC: str = os.getenv("KAFKA_LOG_TOPIC", "logs-storage")

@@ -15,8 +15,8 @@ class StorageService(IStorageService):
 
         correlation_id = correlation_id.strip()
         
-        # Log 2: Solicitando archivo al Storage Server
-        await KafkaLogger.log_info(
+        # Log 2: Solicitando archivo al Storage Server (no bloqueante)
+        KafkaLogger.log_info(
             correlation_id=correlation_id,
             customer_id=customer_id,
             recipient_email=recipient_email,
@@ -30,8 +30,8 @@ class StorageService(IStorageService):
                 response = await client.get(url, timeout=self.timeout)
                 
                 if response.status_code == 404:
-                    # Log error: Archivo no encontrado
-                    await KafkaLogger.log_error(
+                    # Log error: Archivo no encontrado (no bloqueante)
+                    KafkaLogger.log_error(
                         correlation_id=correlation_id,
                         customer_id=customer_id,
                         recipient_email=recipient_email,
@@ -41,8 +41,8 @@ class StorageService(IStorageService):
                 
                 response.raise_for_status()
                 
-                # Log 3: Archivo recuperado correctamente
-                await KafkaLogger.log_success(
+                # Log 3: Archivo recuperado correctamente (no bloqueante)
+                KafkaLogger.log_success(
                     correlation_id=correlation_id,
                     customer_id=customer_id,
                     recipient_email=recipient_email,
@@ -52,7 +52,7 @@ class StorageService(IStorageService):
                 return response.content
                 
         except httpx.TimeoutException:
-            await KafkaLogger.log_error(
+            KafkaLogger.log_error(
                 correlation_id=correlation_id,
                 customer_id=customer_id,
                 recipient_email=recipient_email,
@@ -61,7 +61,7 @@ class StorageService(IStorageService):
             raise StorageTimeoutException(Messages.STORAGE_TIMEOUT_ERROR)
             
         except httpx.ConnectError:
-            await KafkaLogger.log_error(
+            KafkaLogger.log_error(
                 correlation_id=correlation_id,
                 customer_id=customer_id,
                 recipient_email=recipient_email,
@@ -71,7 +71,7 @@ class StorageService(IStorageService):
             
         except httpx.HTTPStatusError as e:
             if e.response.status_code == 404:
-                await KafkaLogger.log_error(
+                KafkaLogger.log_error(
                     correlation_id=correlation_id,
                     customer_id=customer_id,
                     recipient_email=recipient_email,
@@ -79,7 +79,7 @@ class StorageService(IStorageService):
                 )
                 raise StorageFileNotFoundException(Messages.STORAGE_FILE_NOT_FOUND)
             else:
-                await KafkaLogger.log_error(
+                KafkaLogger.log_error(
                     correlation_id=correlation_id,
                     customer_id=customer_id,
                     recipient_email=recipient_email,
@@ -90,7 +90,7 @@ class StorageService(IStorageService):
         except (StorageFileNotFoundException, StorageTimeoutException, StorageConnectionException, StorageServerException):
             raise
         except Exception as e:
-            await KafkaLogger.log_error(
+            KafkaLogger.log_error(
                 correlation_id=correlation_id,
                 customer_id=customer_id,
                 recipient_email=recipient_email,
