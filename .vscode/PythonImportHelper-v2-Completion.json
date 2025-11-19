@@ -1,0 +1,1675 @@
+[
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendRequest",
+        "importPath": "api.models.email_model",
+        "description": "api.models.email_model",
+        "isExtraImport": true,
+        "detail": "api.models.email_model",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendRequest",
+        "importPath": "api.models.email_model",
+        "description": "api.models.email_model",
+        "isExtraImport": true,
+        "detail": "api.models.email_model",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendRequest",
+        "importPath": "api.models.email_model",
+        "description": "api.models.email_model",
+        "isExtraImport": true,
+        "detail": "api.models.email_model",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendRequest",
+        "importPath": "api.models.email_model",
+        "description": "api.models.email_model",
+        "isExtraImport": true,
+        "detail": "api.models.email_model",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendRequest",
+        "importPath": "api.models.email_model",
+        "description": "api.models.email_model",
+        "isExtraImport": true,
+        "detail": "api.models.email_model",
+        "documentation": {}
+    },
+    {
+        "label": "EmailService",
+        "importPath": "api.services.email_service",
+        "description": "api.services.email_service",
+        "isExtraImport": true,
+        "detail": "api.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "StorageService",
+        "importPath": "api.services.storage_service",
+        "description": "api.services.storage_service",
+        "isExtraImport": true,
+        "detail": "api.services.storage_service",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "FileResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "httpx",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httpx",
+        "description": "httpx",
+        "detail": "httpx",
+        "documentation": {}
+    },
+    {
+        "label": "AppBaseException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRecipientRejectedException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailAuthenticationException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageFileNotFoundException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageConnectionException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageTimeoutException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageServerException",
+        "importPath": "api.exceptions.base_exceptions",
+        "description": "api.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "api.utils.constants.messages",
+        "description": "api.utils.constants.messages",
+        "isExtraImport": true,
+        "detail": "api.utils.constants.messages",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "api.utils.constants.messages",
+        "description": "api.utils.constants.messages",
+        "isExtraImport": true,
+        "detail": "api.utils.constants.messages",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "api.utils.constants.messages",
+        "description": "api.utils.constants.messages",
+        "isExtraImport": true,
+        "detail": "api.utils.constants.messages",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "kafkaLog",
+        "importPath": "api.models.kafka_model",
+        "description": "api.models.kafka_model",
+        "isExtraImport": true,
+        "detail": "api.models.kafka_model",
+        "documentation": {}
+    },
+    {
+        "label": "kafkaLog",
+        "importPath": "api.models.kafka_model",
+        "description": "api.models.kafka_model",
+        "isExtraImport": true,
+        "detail": "api.models.kafka_model",
+        "documentation": {}
+    },
+    {
+        "label": "kafkaLog",
+        "importPath": "api.models.kafka_model",
+        "description": "api.models.kafka_model",
+        "isExtraImport": true,
+        "detail": "api.models.kafka_model",
+        "documentation": {}
+    },
+    {
+        "label": "IEmailService",
+        "importPath": "api.services.interfaces.iemail_service",
+        "description": "api.services.interfaces.iemail_service",
+        "isExtraImport": true,
+        "detail": "api.services.interfaces.iemail_service",
+        "documentation": {}
+    },
+    {
+        "label": "build_email_body",
+        "importPath": "api.utils.functions.email_builder",
+        "description": "api.utils.functions.email_builder",
+        "isExtraImport": true,
+        "detail": "api.utils.functions.email_builder",
+        "documentation": {}
+    },
+    {
+        "label": "build_email_message",
+        "importPath": "api.utils.functions.email_sender",
+        "description": "api.utils.functions.email_sender",
+        "isExtraImport": true,
+        "detail": "api.utils.functions.email_sender",
+        "documentation": {}
+    },
+    {
+        "label": "send_email_smtp",
+        "importPath": "api.utils.functions.email_sender",
+        "description": "api.utils.functions.email_sender",
+        "isExtraImport": true,
+        "detail": "api.utils.functions.email_sender",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "AIOKafkaProducer",
+        "importPath": "aiokafka",
+        "description": "aiokafka",
+        "isExtraImport": true,
+        "detail": "aiokafka",
+        "documentation": {}
+    },
+    {
+        "label": "AIOKafkaProducer",
+        "importPath": "aiokafka",
+        "description": "aiokafka",
+        "isExtraImport": true,
+        "detail": "aiokafka",
+        "documentation": {}
+    },
+    {
+        "label": "IKafkaService",
+        "importPath": "api.services.interfaces.ikafka_service",
+        "description": "api.services.interfaces.ikafka_service",
+        "isExtraImport": true,
+        "detail": "api.services.interfaces.ikafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "api.core.config",
+        "description": "api.core.config",
+        "isExtraImport": true,
+        "detail": "api.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "api.core.config",
+        "description": "api.core.config",
+        "isExtraImport": true,
+        "detail": "api.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "api.core.config",
+        "description": "api.core.config",
+        "isExtraImport": true,
+        "detail": "api.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "api.core.config",
+        "description": "api.core.config",
+        "isExtraImport": true,
+        "detail": "api.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "IStorageService",
+        "importPath": "api.services.interfaces.istorage_service",
+        "description": "api.services.interfaces.istorage_service",
+        "isExtraImport": true,
+        "detail": "api.services.interfaces.istorage_service",
+        "documentation": {}
+    },
+    {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEMultipart",
+        "importPath": "email.mime.multipart",
+        "description": "email.mime.multipart",
+        "isExtraImport": true,
+        "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEApplication",
+        "importPath": "email.mime.application",
+        "description": "email.mime.application",
+        "isExtraImport": true,
+        "detail": "email.mime.application",
+        "documentation": {}
+    },
+    {
+        "label": "get_kafka_service",
+        "importPath": "api.services.kafka_service",
+        "description": "api.services.kafka_service",
+        "isExtraImport": true,
+        "detail": "api.services.kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_kafka_service",
+        "importPath": "api.services.kafka_service",
+        "description": "api.services.kafka_service",
+        "isExtraImport": true,
+        "detail": "api.services.kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "register_exception_handlers",
+        "importPath": "api.exceptions.handler_exceptions",
+        "description": "api.exceptions.handler_exceptions",
+        "isExtraImport": true,
+        "detail": "api.exceptions.handler_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "api.controllers.email_controller",
+        "description": "api.controllers.email_controller",
+        "isExtraImport": true,
+        "detail": "api.controllers.email_controller",
+        "documentation": {}
+    },
+    {
+        "label": "RequestDTO",
+        "importPath": "app.models.request_dto",
+        "description": "app.models.request_dto",
+        "isExtraImport": true,
+        "detail": "app.models.request_dto",
+        "documentation": {}
+    },
+    {
+        "label": "RequestDTO",
+        "importPath": "app.models.request_dto",
+        "description": "app.models.request_dto",
+        "isExtraImport": true,
+        "detail": "app.models.request_dto",
+        "documentation": {}
+    },
+    {
+        "label": "RequestDTO",
+        "importPath": "app.models.request_dto",
+        "description": "app.models.request_dto",
+        "isExtraImport": true,
+        "detail": "app.models.request_dto",
+        "documentation": {}
+    },
+    {
+        "label": "PdfService",
+        "importPath": "app.services.pdf_service",
+        "description": "app.services.pdf_service",
+        "isExtraImport": true,
+        "detail": "app.services.pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "AppBaseException",
+        "importPath": "app.exceptions.base_exceptions",
+        "description": "app.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "NotFoundException",
+        "importPath": "app.exceptions.base_exceptions",
+        "description": "app.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationException",
+        "importPath": "app.exceptions.base_exceptions",
+        "description": "app.exceptions.base_exceptions",
+        "isExtraImport": true,
+        "detail": "app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "app.core.messages",
+        "description": "app.core.messages",
+        "isExtraImport": true,
+        "detail": "app.core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "app.core.messages",
+        "description": "app.core.messages",
+        "isExtraImport": true,
+        "detail": "app.core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "app.core.messages",
+        "description": "app.core.messages",
+        "isExtraImport": true,
+        "detail": "app.core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "app.core.messages",
+        "description": "app.core.messages",
+        "isExtraImport": true,
+        "detail": "app.core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "importPath": "app.core.messages",
+        "description": "app.core.messages",
+        "isExtraImport": true,
+        "detail": "app.core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaLogDTO",
+        "importPath": "app.models.kafka_log_dto",
+        "description": "app.models.kafka_log_dto",
+        "isExtraImport": true,
+        "detail": "app.models.kafka_log_dto",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaLogDTO",
+        "importPath": "app.models.kafka_log_dto",
+        "description": "app.models.kafka_log_dto",
+        "isExtraImport": true,
+        "detail": "app.models.kafka_log_dto",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaLogDTO",
+        "importPath": "app.models.kafka_log_dto",
+        "description": "app.models.kafka_log_dto",
+        "isExtraImport": true,
+        "detail": "app.models.kafka_log_dto",
+        "documentation": {}
+    },
+    {
+        "label": "IKafkaService",
+        "importPath": "app.services.interfaces.i_kafka_service",
+        "description": "app.services.interfaces.i_kafka_service",
+        "isExtraImport": true,
+        "detail": "app.services.interfaces.i_kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "IKafkaService",
+        "importPath": "app.services.interfaces.i_kafka_service",
+        "description": "app.services.interfaces.i_kafka_service",
+        "isExtraImport": true,
+        "detail": "app.services.interfaces.i_kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "isExtraImport": true,
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "IPdfService",
+        "importPath": "app.services.interfaces.i_pdf_service",
+        "description": "app.services.interfaces.i_pdf_service",
+        "isExtraImport": true,
+        "detail": "app.services.interfaces.i_pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "validate_pdf_file",
+        "importPath": "app.validations.pdf_validations",
+        "description": "app.validations.pdf_validations",
+        "isExtraImport": true,
+        "detail": "app.validations.pdf_validations",
+        "documentation": {}
+    },
+    {
+        "label": "validate_request_fields",
+        "importPath": "app.validations.request_validations",
+        "description": "app.validations.request_validations",
+        "isExtraImport": true,
+        "detail": "app.validations.request_validations",
+        "documentation": {}
+    },
+    {
+        "label": "get_weekly_folder",
+        "importPath": "app.utils.file_weekly_folder",
+        "description": "app.utils.file_weekly_folder",
+        "isExtraImport": true,
+        "detail": "app.utils.file_weekly_folder",
+        "documentation": {}
+    },
+    {
+        "label": "generate_filename",
+        "importPath": "app.utils.file_naming",
+        "description": "app.utils.file_naming",
+        "isExtraImport": true,
+        "detail": "app.utils.file_naming",
+        "documentation": {}
+    },
+    {
+        "label": "save_file_to_disk",
+        "importPath": "app.utils.file_storage",
+        "description": "app.utils.file_storage",
+        "isExtraImport": true,
+        "detail": "app.utils.file_storage",
+        "documentation": {}
+    },
+    {
+        "label": "find_pdf_by_correlation_id",
+        "importPath": "app.utils.file_search",
+        "description": "app.utils.file_search",
+        "isExtraImport": true,
+        "detail": "app.utils.file_search",
+        "documentation": {}
+    },
+    {
+        "label": "get_clean_filename",
+        "importPath": "app.utils.file_rename",
+        "description": "app.utils.file_rename",
+        "isExtraImport": true,
+        "detail": "app.utils.file_rename",
+        "documentation": {}
+    },
+    {
+        "label": "validate_correlation_id",
+        "importPath": "app.validations.correlation_validation",
+        "description": "app.validations.correlation_validation",
+        "isExtraImport": true,
+        "detail": "app.validations.correlation_validation",
+        "documentation": {}
+    },
+    {
+        "label": "kafka_log_info",
+        "importPath": "app.utils.kafka_log_helper",
+        "description": "app.utils.kafka_log_helper",
+        "isExtraImport": true,
+        "detail": "app.utils.kafka_log_helper",
+        "documentation": {}
+    },
+    {
+        "label": "kafka_log_success",
+        "importPath": "app.utils.kafka_log_helper",
+        "description": "app.utils.kafka_log_helper",
+        "isExtraImport": true,
+        "detail": "app.utils.kafka_log_helper",
+        "documentation": {}
+    },
+    {
+        "label": "kafka_log_error",
+        "importPath": "app.utils.kafka_log_helper",
+        "description": "app.utils.kafka_log_helper",
+        "isExtraImport": true,
+        "detail": "app.utils.kafka_log_helper",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaService",
+        "importPath": "app.services.kafka_service",
+        "description": "app.services.kafka_service",
+        "isExtraImport": true,
+        "detail": "app.services.kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_kafka_service",
+        "importPath": "app.utils.kafka_logger",
+        "description": "app.utils.kafka_logger",
+        "isExtraImport": true,
+        "detail": "app.utils.kafka_logger",
+        "documentation": {}
+    },
+    {
+        "label": "get_kafka_service",
+        "importPath": "app.utils.kafka_logger",
+        "description": "app.utils.kafka_logger",
+        "isExtraImport": true,
+        "detail": "app.utils.kafka_logger",
+        "documentation": {}
+    },
+    {
+        "label": "pdf_controller",
+        "importPath": "app.controllers",
+        "description": "app.controllers",
+        "isExtraImport": true,
+        "detail": "app.controllers",
+        "documentation": {}
+    },
+    {
+        "label": "register_exception_handlers",
+        "importPath": "app.exceptions.handler",
+        "description": "app.exceptions.handler",
+        "isExtraImport": true,
+        "detail": "app.exceptions.handler",
+        "documentation": {}
+    },
+    {
+        "label": "get_email_service",
+        "kind": 2,
+        "importPath": "Email-server.api.controllers.email_controller",
+        "description": "Email-server.api.controllers.email_controller",
+        "peekOfCode": "def get_email_service() -> EmailService:\n    return EmailService()\ndef get_storage_service() -> StorageService:\n    return StorageService()\n@router.post(\"/send\", status_code=status.HTTP_200_OK)\nasync def send_email(\n    request: EmailSendRequest,\n    email_service: EmailService = Depends(get_email_service),\n    storage_service: StorageService = Depends(get_storage_service)\n):",
+        "detail": "Email-server.api.controllers.email_controller",
+        "documentation": {}
+    },
+    {
+        "label": "get_storage_service",
+        "kind": 2,
+        "importPath": "Email-server.api.controllers.email_controller",
+        "description": "Email-server.api.controllers.email_controller",
+        "peekOfCode": "def get_storage_service() -> StorageService:\n    return StorageService()\n@router.post(\"/send\", status_code=status.HTTP_200_OK)\nasync def send_email(\n    request: EmailSendRequest,\n    email_service: EmailService = Depends(get_email_service),\n    storage_service: StorageService = Depends(get_storage_service)\n):\n    pdf_file = await storage_service.get_file(request.correlation_id)\n    response = await email_service.send_email(request, pdf_file)",
+        "detail": "Email-server.api.controllers.email_controller",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "Email-server.api.controllers.email_controller",
+        "description": "Email-server.api.controllers.email_controller",
+        "peekOfCode": "router = APIRouter(\n    prefix=\"/api/email\",\n    tags=[\"Email\"]\n)\ndef get_email_service() -> EmailService:\n    return EmailService()\ndef get_storage_service() -> StorageService:\n    return StorageService()\n@router.post(\"/send\", status_code=status.HTTP_200_OK)\nasync def send_email(",
+        "detail": "Email-server.api.controllers.email_controller",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "Email-server.api.core.config",
+        "description": "Email-server.api.core.config",
+        "peekOfCode": "class Settings(BaseSettings):\n    APP_NAME: str\n    APP_VERSION: str\n    SERVICE_NAME: str\n    HOST: str\n    PORT: int\n    SMTP_SERVER: Optional[str] = None\n    SMTP_PORT: Optional[int] = None\n    SMTP_USERNAME: Optional[str] = None\n    SMTP_PASSWORD: Optional[str] = None",
+        "detail": "Email-server.api.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "Email-server.api.core.config",
+        "description": "Email-server.api.core.config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "Email-server.api.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "AppBaseException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class AppBaseException(Exception):\n    def __init__(self, message: str, status_code: int = 400, error_code: str = \"APP_ERROR\"):\n        self.message = message\n        self.status_code = status_code\n        self.error_code = error_code\n        super().__init__(message)\nclass NotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404, error_code=\"NOT_FOUND\")\nclass ValidationException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "NotFoundException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class NotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404, error_code=\"NOT_FOUND\")\nclass ValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"VALIDATION_ERROR\")\nclass InternalErrorException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500, error_code=\"INTERNAL_ERROR\")\nclass StorageServerException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class ValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"VALIDATION_ERROR\")\nclass InternalErrorException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500, error_code=\"INTERNAL_ERROR\")\nclass StorageServerException(AppBaseException):\n    def __init__(self, message: str, status_code: int = 502):\n        super().__init__(message, status_code=status_code, error_code=\"STORAGE_SERVER_ERROR\")\nclass StorageFileNotFoundException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "InternalErrorException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class InternalErrorException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500, error_code=\"INTERNAL_ERROR\")\nclass StorageServerException(AppBaseException):\n    def __init__(self, message: str, status_code: int = 502):\n        super().__init__(message, status_code=status_code, error_code=\"STORAGE_SERVER_ERROR\")\nclass StorageFileNotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404, error_code=\"FILE_NOT_FOUND\")\nclass StorageConnectionException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageServerException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class StorageServerException(AppBaseException):\n    def __init__(self, message: str, status_code: int = 502):\n        super().__init__(message, status_code=status_code, error_code=\"STORAGE_SERVER_ERROR\")\nclass StorageFileNotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404, error_code=\"FILE_NOT_FOUND\")\nclass StorageConnectionException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=503, error_code=\"STORAGE_CONNECTION_ERROR\")\nclass StorageTimeoutException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageFileNotFoundException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class StorageFileNotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404, error_code=\"FILE_NOT_FOUND\")\nclass StorageConnectionException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=503, error_code=\"STORAGE_CONNECTION_ERROR\")\nclass StorageTimeoutException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=504, error_code=\"STORAGE_TIMEOUT\")\nclass EmailSendException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageConnectionException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class StorageConnectionException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=503, error_code=\"STORAGE_CONNECTION_ERROR\")\nclass StorageTimeoutException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=504, error_code=\"STORAGE_TIMEOUT\")\nclass EmailSendException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500, error_code=\"EMAIL_SEND_ERROR\")\nclass EmailValidationException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "StorageTimeoutException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class StorageTimeoutException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=504, error_code=\"STORAGE_TIMEOUT\")\nclass EmailSendException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500, error_code=\"EMAIL_SEND_ERROR\")\nclass EmailValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"EMAIL_VALIDATION_ERROR\")\nclass EmailRecipientRejectedException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class EmailSendException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500, error_code=\"EMAIL_SEND_ERROR\")\nclass EmailValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"EMAIL_VALIDATION_ERROR\")\nclass EmailRecipientRejectedException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"EMAIL_RECIPIENT_REJECTED\")\nclass EmailAuthenticationException(AppBaseException):",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailValidationException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class EmailValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"EMAIL_VALIDATION_ERROR\")\nclass EmailRecipientRejectedException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"EMAIL_RECIPIENT_REJECTED\")\nclass EmailAuthenticationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=401, error_code=\"EMAIL_AUTHENTICATION_ERROR\")",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRecipientRejectedException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class EmailRecipientRejectedException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400, error_code=\"EMAIL_RECIPIENT_REJECTED\")\nclass EmailAuthenticationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=401, error_code=\"EMAIL_AUTHENTICATION_ERROR\")",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailAuthenticationException",
+        "kind": 6,
+        "importPath": "Email-server.api.exceptions.base_exceptions",
+        "description": "Email-server.api.exceptions.base_exceptions",
+        "peekOfCode": "class EmailAuthenticationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=401, error_code=\"EMAIL_AUTHENTICATION_ERROR\")",
+        "detail": "Email-server.api.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "register_exception_handlers",
+        "kind": 2,
+        "importPath": "Email-server.api.exceptions.handler_exceptions",
+        "description": "Email-server.api.exceptions.handler_exceptions",
+        "peekOfCode": "def register_exception_handlers(app):\n    @app.exception_handler(AppBaseException)\n    async def app_exception_handler(request: Request, exc: AppBaseException):\n        return JSONResponse(\n            status_code=exc.status_code,\n            content={\n                \"success\": False,\n                \"error_code\": exc.error_code,\n                \"error_message\": exc.message,\n                \"status_code\": exc.status_code,",
+        "detail": "Email-server.api.exceptions.handler_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSendRequest",
+        "kind": 6,
+        "importPath": "Email-server.api.models.email_model",
+        "description": "Email-server.api.models.email_model",
+        "peekOfCode": "class EmailSendRequest(BaseModel):\n    correlation_id: str = Field(alias=\"CorrelationId\")\n    recipient_email: EmailStr = Field(alias=\"ToEmail\")\n    title: str = Field(alias=\"Subject\")\n    description: str = Field(alias=\"Message\")\n    customer_id: Union[str, int] = Field(alias=\"CustomerId\")\n    class Config:\n        allow_population_by_field_name = True",
+        "detail": "Email-server.api.models.email_model",
+        "documentation": {}
+    },
+    {
+        "label": "kafkaLog",
+        "kind": 6,
+        "importPath": "Email-server.api.models.kafka_model",
+        "description": "Email-server.api.models.kafka_model",
+        "peekOfCode": "class kafkaLog(BaseModel):\n    level: str\n    correlation_id: str\n    customer_id: str\n    recipient_email: str\n    message: str\n    date: str = Field(default_factory=lambda: datetime.now().strftime(\"%Y-%m-%d\"))\n    time: str = Field(default_factory=lambda: datetime.now().strftime(\"%H:%M:%S\"))",
+        "detail": "Email-server.api.models.kafka_model",
+        "documentation": {}
+    },
+    {
+        "label": "IEmailService",
+        "kind": 6,
+        "importPath": "Email-server.api.services.interfaces.iemail_service",
+        "description": "Email-server.api.services.interfaces.iemail_service",
+        "peekOfCode": "class IEmailService(ABC):\n    @abstractmethod\n    async def send_email(self, email_request: EmailSendRequest, pdf_file: bytes) -> dict:\n        pass",
+        "detail": "Email-server.api.services.interfaces.iemail_service",
+        "documentation": {}
+    },
+    {
+        "label": "IKafkaService",
+        "kind": 6,
+        "importPath": "Email-server.api.services.interfaces.ikafka_service",
+        "description": "Email-server.api.services.interfaces.ikafka_service",
+        "peekOfCode": "class IKafkaService(ABC):\n    @abstractmethod\n    async def get_producer(self):\n        pass\n    @abstractmethod\n    async def send_log(self, kafka_log:kafkaLog):\n        pass\n    @abstractmethod\n    async def close(self):\n        pass",
+        "detail": "Email-server.api.services.interfaces.ikafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "IStorageService",
+        "kind": 6,
+        "importPath": "Email-server.api.services.interfaces.istorage_service",
+        "description": "Email-server.api.services.interfaces.istorage_service",
+        "peekOfCode": "class IStorageService(ABC):\n    @abstractmethod\n    async def get_file(self, correlation_id: str) -> bytes:\n        pass",
+        "detail": "Email-server.api.services.interfaces.istorage_service",
+        "documentation": {}
+    },
+    {
+        "label": "EmailService",
+        "kind": 6,
+        "importPath": "Email-server.api.services.email_service",
+        "description": "Email-server.api.services.email_service",
+        "peekOfCode": "class EmailService(IEmailService):\n    async def send_email(self, email_request: EmailSendRequest, pdf_file: bytes) -> dict:\n        try:\n            body_html = build_email_body(email_request)\n            msg = build_email_message(email_request, body_html, pdf_file)\n            await send_email_smtp(msg, email_request.recipient_email)\n            return {\n                \"status\": \"success\",\n                \"message\": Messages.EMAIL_SEND_SUCCESS,\n                \"correlation_id\": email_request.correlation_id",
+        "detail": "Email-server.api.services.email_service",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaService",
+        "kind": 6,
+        "importPath": "Email-server.api.services.kafka_service",
+        "description": "Email-server.api.services.kafka_service",
+        "peekOfCode": "class KafkaService(IKafkaService):\n    def __init__(self):\n        self.bootstrap_servers = settings.KAFKA_BOOTSTRAP_SERVERS\n        self.producer = None\n        self.lock = asyncio.Lock()\n    async def get_producer(self):\n        async with self.lock:\n            if not self.producer:\n                self.producer = AIOKafkaProducer(\n                    bootstrap_servers=self.bootstrap_servers,",
+        "detail": "Email-server.api.services.kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_kafka_service",
+        "kind": 2,
+        "importPath": "Email-server.api.services.kafka_service",
+        "description": "Email-server.api.services.kafka_service",
+        "peekOfCode": "def get_kafka_service() -> KafkaService:\n    global _kafka_service_instance\n    if _kafka_service_instance is None:\n        _kafka_service_instance = KafkaService()\n    return _kafka_service_instance",
+        "detail": "Email-server.api.services.kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "StorageService",
+        "kind": 6,
+        "importPath": "Email-server.api.services.storage_service",
+        "description": "Email-server.api.services.storage_service",
+        "peekOfCode": "class StorageService(IStorageService):\n    def __init__(self):\n        self.base_url = settings.STORAGE_SERVER_URL\n        self.timeout = settings.STORAGE_SERVER_TIMEOUT\n    async def get_file(self, correlation_id: str) -> bytes:\n        correlation_id = correlation_id.strip()\n        url = f\"{self.base_url}/{correlation_id}\"\n        try:\n            async with httpx.AsyncClient() as client:\n                response = await client.get(url, timeout=self.timeout)",
+        "detail": "Email-server.api.services.storage_service",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "kind": 6,
+        "importPath": "Email-server.api.utils.constants.messages",
+        "description": "Email-server.api.utils.constants.messages",
+        "peekOfCode": "class Messages:\n    # Mensajes de error generales\n    UNEXPECTED_ERROR = \"Ha ocurrido un error inesperado en el servidor\"\n    VALIDATION_ERROR = \"Error de validación en los datos proporcionados\"\n    NOT_FOUND_ERROR = \"El recurso solicitado no fue encontrado\"\n    INTERNAL_ERROR = \"Error interno del servidor\"\n    # Mensajes específicos de email\n    EMAIL_SEND_SUCCESS = \"Email enviado exitosamente\"\n    EMAIL_SEND_FAILED = \"Error al enviar el email\"\n    EMAIL_INVALID_RECIPIENT = \"La dirección de email del destinatario no es válida o fue rechazada\"",
+        "detail": "Email-server.api.utils.constants.messages",
+        "documentation": {}
+    },
+    {
+        "label": "build_email_body",
+        "kind": 2,
+        "importPath": "Email-server.api.utils.functions.email_builder",
+        "description": "Email-server.api.utils.functions.email_builder",
+        "peekOfCode": "def build_email_body(email_request: EmailSendRequest) -> str:\n    current_date = datetime.utcnow().strftime(\"%d de %B de %Y\")\n    current_time = datetime.utcnow().strftime(\"%H:%M:%S UTC\")\n    body_html = f\"\"\"\n    <html>\n    <body style=\"font-family: Arial, sans-serif; margin: 20px;\">\n        <h2 style=\"color: #2c3e50;\">Reporte Generado</h2>\n        <p>Estimado usuario,</p>\n        <p>Su reporte ha sido generado exitosamente y se adjunta a este correo electrónico.</p>\n        <div style=\"background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;\">",
+        "detail": "Email-server.api.utils.functions.email_builder",
+        "documentation": {}
+    },
+    {
+        "label": "build_email_message",
+        "kind": 2,
+        "importPath": "Email-server.api.utils.functions.email_sender",
+        "description": "Email-server.api.utils.functions.email_sender",
+        "peekOfCode": "def build_email_message(email_request: EmailSendRequest, body_html: str, pdf_file: bytes) -> MIMEMultipart:\n    msg = MIMEMultipart()\n    msg['From'] = f\"{settings.FROM_NAME} <{settings.FROM_EMAIL}>\"\n    msg['To'] = email_request.recipient_email\n    msg['Subject'] = f\"{settings.EMAIL_SUBJECT_PREFIX} {email_request.title}\"\n    msg['Date'] = datetime.utcnow().strftime(\"%a, %d %b %Y %H:%M:%S +0000\")\n    msg.attach(MIMEText(body_html, 'html'))\n    pdf_attachment = create_pdf_attachment(pdf_file, email_request.correlation_id)\n    msg.attach(pdf_attachment)\n    return msg",
+        "detail": "Email-server.api.utils.functions.email_sender",
+        "documentation": {}
+    },
+    {
+        "label": "create_pdf_attachment",
+        "kind": 2,
+        "importPath": "Email-server.api.utils.functions.email_sender",
+        "description": "Email-server.api.utils.functions.email_sender",
+        "peekOfCode": "def create_pdf_attachment(pdf_file: bytes, correlation_id: str) -> MIMEApplication:\n    pdf_attachment = MIMEApplication(pdf_file, _subtype='pdf')\n    filename = f\"reporte_{correlation_id}.pdf\"\n    pdf_attachment.add_header('Content-Disposition', 'attachment', filename=filename)\n    return pdf_attachment\nasync def send_email_smtp(msg: MIMEMultipart, recipient: str) -> None:\n    server = smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT)\n    try:\n        if settings.SMTP_USE_TLS:\n            server.starttls()",
+        "detail": "Email-server.api.utils.functions.email_sender",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaLogger",
+        "kind": 6,
+        "importPath": "Email-server.api.utils.static.kafka_methods",
+        "description": "Email-server.api.utils.static.kafka_methods",
+        "peekOfCode": "class KafkaLogger:\n    @staticmethod\n    async def log_info(correlation_id:str, customer_id: str, recipient_email:str, message: str):\n        await KafkaLogger._send_log(\"INFO\", correlation_id, recipient_email, message)\n    @staticmethod\n    async def log_warning(correlation_id:str, customer_id: str, recipient_email:str, message: str):\n        await KafkaLogger._send_log(\"WARNING\", correlation_id, recipient_email, message)\n    @staticmethod\n    async def log_error(correlation_id:str, customer_id: str, recipient_email:str, message: str):\n        await KafkaLogger._send_log(\"ERROR\", correlation_id, recipient_email, message)",
+        "detail": "Email-server.api.utils.static.kafka_methods",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "Email-server.api.main",
+        "description": "Email-server.api.main",
+        "peekOfCode": "app = FastAPI(\n    tittle=\"Email Server API\",\n    version=settings.APP_VERSION\n)\napp.include_router(email_router)\nregister_exception_handlers(app)\n@app.on_event(\"shutdown\")\nasync def shutdown_event():\n    kafka_service = get_kafka_service()\n    await kafka_service.close()",
+        "detail": "Email-server.api.main",
+        "documentation": {}
+    },
+    {
+        "label": "get_pdf_service",
+        "kind": 2,
+        "importPath": "Storage-server.app.controllers.pdf_controller",
+        "description": "Storage-server.app.controllers.pdf_controller",
+        "peekOfCode": "def get_pdf_service() -> PdfService:\n    return PdfService()\n@router.post(\"/upload\", status_code=201)\nasync def upload_pdf(\n    file: UploadFile = File(...),\n    correlationId: str = Form(...),\n    clientId: int = Form(...),\n    dateGeneration: str = Form(...),\n    pdf_service: PdfService = Depends(get_pdf_service)\n):",
+        "detail": "Storage-server.app.controllers.pdf_controller",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "Storage-server.app.controllers.pdf_controller",
+        "description": "Storage-server.app.controllers.pdf_controller",
+        "peekOfCode": "router = APIRouter(prefix=\"/api/storage\", tags=[\"PDF\"])\ndef get_pdf_service() -> PdfService:\n    return PdfService()\n@router.post(\"/upload\", status_code=201)\nasync def upload_pdf(\n    file: UploadFile = File(...),\n    correlationId: str = Form(...),\n    clientId: int = Form(...),\n    dateGeneration: str = Form(...),\n    pdf_service: PdfService = Depends(get_pdf_service)",
+        "detail": "Storage-server.app.controllers.pdf_controller",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "Storage-server.app.core.config",
+        "description": "Storage-server.app.core.config",
+        "peekOfCode": "class Settings(BaseSettings):\n    APP_NAME: str\n    APP_VERSION: str\n    SERVICE_NAME: str\n    HOST: str\n    PORT: int\n    UPLOAD_DIR: str\n    MAX_FILE_SIZE: int\n    ALLOWED_EXTENSIONS: List[str]\n    KAFKA_SECURITY_PROTOCOL: str",
+        "detail": "Storage-server.app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "Storage-server.app.core.config",
+        "description": "Storage-server.app.core.config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "Storage-server.app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "Messages",
+        "kind": 6,
+        "importPath": "Storage-server.app.core.messages",
+        "description": "Storage-server.app.core.messages",
+        "peekOfCode": "class Messages:\n    # estándar\n    MISSING_CORRELATION_ID = \"El campo 'correlationId' es obligatorio\"\n    INVALID_CLIENT_ID = \"El campo 'clientId' debe ser un número entero positivo\"\n    INVALID_DATE_FORMAT = \"El campo 'dateGeneration' debe tener el siguiente formato: 2025-10-08\"\n    INVALID_DATE_TIME = \"El campo 'dateGeneration' no puede ser una fecha futura o anterior a hace 10 años\"\n    # errores\n    FILE_NOT_FOUND = \"Archivo no encontrado\"\n    INTERNAL_SERVER_ERROR = \"Error interno del servidor\"\n    INVALID_FILE_TYPE = \"Extensión de archivo no permitida\"",
+        "detail": "Storage-server.app.core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "AppBaseException",
+        "kind": 6,
+        "importPath": "Storage-server.app.exceptions.base_exceptions",
+        "description": "Storage-server.app.exceptions.base_exceptions",
+        "peekOfCode": "class AppBaseException(Exception):\n    def __init__(self, message: str, status_code: int = 400):\n        self.message = message\n        self.status_code = status_code\n        super().__init__(message)\nclass NotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404)\nclass ValidationException(AppBaseException):\n    def __init__(self, message: str):",
+        "detail": "Storage-server.app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "NotFoundException",
+        "kind": 6,
+        "importPath": "Storage-server.app.exceptions.base_exceptions",
+        "description": "Storage-server.app.exceptions.base_exceptions",
+        "peekOfCode": "class NotFoundException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=404)\nclass ValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400)\nclass InternalErrorException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500)",
+        "detail": "Storage-server.app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationException",
+        "kind": 6,
+        "importPath": "Storage-server.app.exceptions.base_exceptions",
+        "description": "Storage-server.app.exceptions.base_exceptions",
+        "peekOfCode": "class ValidationException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=400)\nclass InternalErrorException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500)",
+        "detail": "Storage-server.app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "InternalErrorException",
+        "kind": 6,
+        "importPath": "Storage-server.app.exceptions.base_exceptions",
+        "description": "Storage-server.app.exceptions.base_exceptions",
+        "peekOfCode": "class InternalErrorException(AppBaseException):\n    def __init__(self, message: str):\n        super().__init__(message, status_code=500)",
+        "detail": "Storage-server.app.exceptions.base_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "register_exception_handlers",
+        "kind": 2,
+        "importPath": "Storage-server.app.exceptions.handler",
+        "description": "Storage-server.app.exceptions.handler",
+        "peekOfCode": "def register_exception_handlers(app):\n    @app.exception_handler(AppBaseException)\n    async def app_exception_handler(request: Request, exc: AppBaseException):\n        return JSONResponse(\n            status_code=exc.status_code,\n            content={\n                \"error\": exc.message,\n                \"status_code\": exc.status_code,\n                \"path\": str(request.url)\n            },",
+        "detail": "Storage-server.app.exceptions.handler",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaLogDTO",
+        "kind": 6,
+        "importPath": "Storage-server.app.models.kafka_log_dto",
+        "description": "Storage-server.app.models.kafka_log_dto",
+        "peekOfCode": "class KafkaLogDTO(BaseModel):\n    level: str\n    message: str\n    correlation_id: Optional[str] = None\n    timestamp: str = Field(default_factory=lambda: datetime.utcnow().isoformat())\n    class Config:\n        json_encoders = {\n            datetime: lambda v: v.isoformat()\n        }",
+        "detail": "Storage-server.app.models.kafka_log_dto",
+        "documentation": {}
+    },
+    {
+        "label": "RequestDTO",
+        "kind": 6,
+        "importPath": "Storage-server.app.models.request_dto",
+        "description": "Storage-server.app.models.request_dto",
+        "peekOfCode": "class RequestDTO(BaseModel):\n    correlationId: str\n    clientId: int\n    dateGeneration: str",
+        "detail": "Storage-server.app.models.request_dto",
+        "documentation": {}
+    },
+    {
+        "label": "IKafkaService",
+        "kind": 6,
+        "importPath": "Storage-server.app.services.interfaces.i_kafka_service",
+        "description": "Storage-server.app.services.interfaces.i_kafka_service",
+        "peekOfCode": "class IKafkaService(ABC):\n    @abstractmethod\n    async def send_log(self, log_dto: KafkaLogDTO):\n        pass",
+        "detail": "Storage-server.app.services.interfaces.i_kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "IPdfService",
+        "kind": 6,
+        "importPath": "Storage-server.app.services.interfaces.i_pdf_service",
+        "description": "Storage-server.app.services.interfaces.i_pdf_service",
+        "peekOfCode": "class IPdfService(ABC):\n    @abstractmethod\n    async def store_pdf(self, file: UploadFile, request_dto: RequestDTO):\n        pass\n    @abstractmethod\n    async def retrieve_pdf(self, correlation_id: str) -> str:\n        pass",
+        "detail": "Storage-server.app.services.interfaces.i_pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaService",
+        "kind": 6,
+        "importPath": "Storage-server.app.services.kafka_service",
+        "description": "Storage-server.app.services.kafka_service",
+        "peekOfCode": "class KafkaService(IKafkaService):\n    def __init__(self):\n        self.bootstrap_servers = settings.KAFKA_BOOTSTRAP_SERVERS\n        self.producer = None\n        self.lock = asyncio.Lock()\n    async def _get_producer(self):\n        async with self.lock:\n            if not self.producer:\n                self.producer = AIOKafkaProducer(\n                    bootstrap_servers=self.bootstrap_servers,",
+        "detail": "Storage-server.app.services.kafka_service",
+        "documentation": {}
+    },
+    {
+        "label": "PdfService",
+        "kind": 6,
+        "importPath": "Storage-server.app.services.pdf_service",
+        "description": "Storage-server.app.services.pdf_service",
+        "peekOfCode": "class PdfService(IPdfService):\n    def __init__(self):\n        os.makedirs(settings.UPLOAD_DIR, exist_ok=True)\n    async def store_pdf(self, file: UploadFile, request_dto: RequestDTO):\n        correlation_id = request_dto.correlationId\n        try:\n            # Log de inicio del proceso\n            await kafka_log_info(f\"Iniciando proceso de subida de PDF para cliente {request_dto.clientId}\", correlation_id)\n            # Validaciones\n            validate_pdf_file(file)",
+        "detail": "Storage-server.app.services.pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "generate_filename",
+        "kind": 2,
+        "importPath": "Storage-server.app.utils.file_naming",
+        "description": "Storage-server.app.utils.file_naming",
+        "peekOfCode": "def generate_filename(correlation_id: str, date_generation: str) -> str:\n    return f\"{correlation_id}_{date_generation}.pdf\"",
+        "detail": "Storage-server.app.utils.file_naming",
+        "documentation": {}
+    },
+    {
+        "label": "get_clean_filename",
+        "kind": 2,
+        "importPath": "Storage-server.app.utils.file_rename",
+        "description": "Storage-server.app.utils.file_rename",
+        "peekOfCode": "def get_clean_filename(file_path: str, correlation_id: str) -> str:\n    filename = os.path.basename(file_path)\n    if filename.startswith(f\"{correlation_id}_\"):\n        return filename[len(correlation_id) + 1:]\n    return filename",
+        "detail": "Storage-server.app.utils.file_rename",
+        "documentation": {}
+    },
+    {
+        "label": "find_pdf_by_correlation_id",
+        "kind": 2,
+        "importPath": "Storage-server.app.utils.file_search",
+        "description": "Storage-server.app.utils.file_search",
+        "peekOfCode": "def find_pdf_by_correlation_id(correlation_id: str) -> str | None:\n    for root, _, files in os.walk(settings.UPLOAD_DIR):\n        for f in files:\n            if f.startswith(f\"{correlation_id}_\"):\n                full_path = os.path.join(root, f)\n                return full_path\n    return None",
+        "detail": "Storage-server.app.utils.file_search",
+        "documentation": {}
+    },
+    {
+        "label": "get_weekly_folder",
+        "kind": 2,
+        "importPath": "Storage-server.app.utils.file_weekly_folder",
+        "description": "Storage-server.app.utils.file_weekly_folder",
+        "peekOfCode": "def get_weekly_folder() -> str:\n    now = datetime.now()\n    year, week, _ = now.isocalendar()\n    week_folder = f\"{year}-W{week:02d}\"\n    target_dir = os.path.join(settings.UPLOAD_DIR, week_folder)\n    os.makedirs(target_dir, exist_ok=True)\n    return target_dir",
+        "detail": "Storage-server.app.utils.file_weekly_folder",
+        "documentation": {}
+    },
+    {
+        "label": "get_kafka_service",
+        "kind": 2,
+        "importPath": "Storage-server.app.utils.kafka_logger",
+        "description": "Storage-server.app.utils.kafka_logger",
+        "peekOfCode": "def get_kafka_service() -> IKafkaService:\n    return _kafka_service_instance",
+        "detail": "Storage-server.app.utils.kafka_logger",
+        "documentation": {}
+    },
+    {
+        "label": "_kafka_service_instance",
+        "kind": 5,
+        "importPath": "Storage-server.app.utils.kafka_logger",
+        "description": "Storage-server.app.utils.kafka_logger",
+        "peekOfCode": "_kafka_service_instance = KafkaService()\ndef get_kafka_service() -> IKafkaService:\n    return _kafka_service_instance",
+        "detail": "Storage-server.app.utils.kafka_logger",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaLogger",
+        "kind": 6,
+        "importPath": "Storage-server.app.utils.kafka_log_helper",
+        "description": "Storage-server.app.utils.kafka_log_helper",
+        "peekOfCode": "class KafkaLogger:\n    @staticmethod\n    async def log_info(message: str, correlation_id: Optional[str] = None):\n        await KafkaLogger._send_log(\"INFO\", message, correlation_id)\n    @staticmethod\n    async def log_warning(message: str, correlation_id: Optional[str] = None):\n        await KafkaLogger._send_log(\"WARNING\", message, correlation_id)\n    @staticmethod\n    async def log_error(message: str, correlation_id: Optional[str] = None):\n        await KafkaLogger._send_log(\"ERROR\", message, correlation_id)",
+        "detail": "Storage-server.app.utils.kafka_log_helper",
+        "documentation": {}
+    },
+    {
+        "label": "validate_correlation_id",
+        "kind": 2,
+        "importPath": "Storage-server.app.validations.correlation_validation",
+        "description": "Storage-server.app.validations.correlation_validation",
+        "peekOfCode": "def validate_correlation_id(correlation_id: str):\n    cleaned_id = correlation_id.strip() if correlation_id else \"\"\n    if not cleaned_id:\n        raise ValidationException(Messages.MISSING_CORRELATION_ID)",
+        "detail": "Storage-server.app.validations.correlation_validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_pdf_file",
+        "kind": 2,
+        "importPath": "Storage-server.app.validations.pdf_validations",
+        "description": "Storage-server.app.validations.pdf_validations",
+        "peekOfCode": "def validate_pdf_file(file: UploadFile):\n    _, ext = os.path.splitext(file.filename)\n    if ext.lower() not in settings.ALLOWED_EXTENSIONS:\n        raise HTTPException(status_code=400, detail=Messages.INVALID_FILE_TYPE)\n    file.file.seek(0, os.SEEK_END)\n    size = file.file.tell()\n    file.file.seek(0)\n    if size > settings.MAX_FILE_SIZE:\n        raise HTTPException(status_code=400, detail=Messages.FILE_TOO_LARGE)",
+        "detail": "Storage-server.app.validations.pdf_validations",
+        "documentation": {}
+    },
+    {
+        "label": "validate_request_fields",
+        "kind": 2,
+        "importPath": "Storage-server.app.validations.request_validations",
+        "description": "Storage-server.app.validations.request_validations",
+        "peekOfCode": "def validate_request_fields(correlation_id: str, client_id: int, date_generation: str):\n    if not correlation_id or correlation_id.strip() == \"\":\n        raise HTTPException(status_code=400, detail=Messages.MISSING_CORRELATION_ID)\n    if not isinstance(client_id, int) or client_id <= 0:\n        raise HTTPException(status_code=400, detail=Messages.INVALID_CLIENT_ID)\n    try:\n        # Solo permite el formato \"YYYY-MM-DD\"\n        date_obj = datetime.strptime(date_generation, \"%Y-%m-%d\")\n    except ValueError:\n        raise HTTPException(status_code=400, detail=Messages.INVALID_DATE_FORMAT)",
+        "detail": "Storage-server.app.validations.request_validations",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "Storage-server.app.main",
+        "description": "Storage-server.app.main",
+        "peekOfCode": "app = FastAPI(\n    title=settings.APP_NAME,\n    version=settings.APP_VERSION\n)\napp.include_router(pdf_controller.router)\nregister_exception_handlers(app)\n@app.on_event(\"shutdown\")\nasync def shutdown_event():\n    kafka_service = get_kafka_service()\n    await kafka_service.close()",
+        "detail": "Storage-server.app.main",
+        "documentation": {}
+    }
+]
