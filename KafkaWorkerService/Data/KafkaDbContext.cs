@@ -29,16 +29,18 @@ public class KafkaDbContext : DbContext
             entity.HasIndex(e => e.Topic);
             entity.HasIndex(e => e.CreatedAt);
         });
-       //config email
+        //config email
         modelBuilder.Entity<EmailLog>(entity =>
         {
             entity.HasKey(e => e.Id);
+            entity.Property(e => e.Level).IsRequired().HasMaxLength(50);
             entity.Property(e => e.CorrelationId).IsRequired().HasMaxLength(100);
-            entity.Property(e => e.Service).IsRequired().HasMaxLength(255);
-            entity.Property(e => e.Endpoint).IsRequired().HasMaxLength(255);
-            entity.Property(e => e.Timestamp).IsRequired();
-            entity.Property(e => e.Success).IsRequired();
-            entity.HasIndex(e => e.CorrelationId).IsUnique();
+            entity.Property(e => e.CustomerId).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.RecipientEmail).IsRequired().HasMaxLength(255);
+            entity.Property(e => e.Message).IsRequired();
+            entity.Property(e => e.Date).IsRequired().HasMaxLength(10);
+            entity.Property(e => e.Time).IsRequired().HasMaxLength(10);
+            entity.HasIndex(e => e.CorrelationId);
             entity.HasIndex(e => e.CreatedAt);
         });
 
@@ -72,12 +74,11 @@ public class KafkaDbContext : DbContext
         modelBuilder.Entity<StorageLog>(entity =>
         {
             entity.HasKey(e => e.Id);
+            entity.Property(e => e.Level).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Message).IsRequired();
             entity.Property(e => e.CorrelationId).IsRequired().HasMaxLength(100);
-            entity.Property(e => e.Service).IsRequired().HasMaxLength(255);
-            entity.Property(e => e.Endpoint).IsRequired().HasMaxLength(255);
             entity.Property(e => e.Timestamp).IsRequired();
-            entity.Property(e => e.Success).IsRequired();
-            entity.HasIndex(e => e.CorrelationId).IsUnique();
+            entity.HasIndex(e => e.CorrelationId);
             entity.HasIndex(e => e.CreatedAt);
         });
 
@@ -85,12 +86,13 @@ public class KafkaDbContext : DbContext
         modelBuilder.Entity<MessageLog>(entity =>
         {
             entity.HasKey(e => e.Id);
-            entity.Property(e => e.CorrelationId).IsRequired().HasMaxLength(100);
-            entity.Property(e => e.Service).IsRequired().HasMaxLength(255);
-            entity.Property(e => e.Endpoint).IsRequired().HasMaxLength(255);
             entity.Property(e => e.Timestamp).IsRequired();
-            entity.Property(e => e.Success).IsRequired();
-            entity.HasIndex(e => e.CorrelationId).IsUnique();
+            entity.Property(e => e.Type).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.CorrelationId).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.Platform).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.ChatId).IsRequired().HasMaxLength(100);
+            entity.Property(e => e.Message).IsRequired();
+            entity.HasIndex(e => e.CorrelationId);
             entity.HasIndex(e => e.CreatedAt);
         });
     }

@@ -6,7 +6,6 @@ C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proye
 C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\obj\Debug\net9.0\KafkaWorkerService.sourcelink.json
 C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\bin\Debug\net9.0\appsettings.json
-C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\bin\Debug\net9.0\KAFKA_MESSAGE_EXAMPLES.json
 C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\bin\Debug\net9.0\KafkaWorkerService.exe
 C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\bin\Debug\net9.0\KafkaWorkerService.deps.json
 C:\Users\luisr\OneDrive - Universidad de Costa Rica\Info Aplicada\Proyecto\Proyectos-Info\KafkaWorkerService\bin\Debug\net9.0\KafkaWorkerService.runtimeconfig.json

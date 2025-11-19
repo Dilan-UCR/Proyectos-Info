@@ -4,6 +4,7 @@ using KafkaWorkerService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KafkaWorkerService.Migrations
 {
     [DbContext(typeof(KafkaDbContext))]
-    partial class KafkaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251119072047_UpdateEmailAndMessageLogsSchema")]
+    partial class UpdateEmailAndMessageLogsSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

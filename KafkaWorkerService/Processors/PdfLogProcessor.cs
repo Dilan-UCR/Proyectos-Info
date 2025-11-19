@@ -27,7 +27,8 @@ public class PdfLogProcessor : IMessageProcessor
     {
         try
         {
-            var pdfLog = JsonSerializer.Deserialize<PdfLog>(message.Value)
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var pdfLog = JsonSerializer.Deserialize<PdfLog>(message.Message.Value, options)
                 ?? throw new JsonException("No se pudo deserializar el mensaje de PDF");
 
             // Patrón UPSERT: Buscar por CorrelationId
@@ -55,7 +56,7 @@ public class PdfLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Pdf,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Success",
                 KafkaOffset = message.Offset.Value,
                 KafkaPartition = message.Partition.Value
@@ -74,7 +75,7 @@ public class PdfLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Pdf,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Failed",
                 ErrorDetails = ex.Message,
                 KafkaOffset = message.Offset.Value,

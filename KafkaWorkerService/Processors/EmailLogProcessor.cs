@@ -27,28 +27,11 @@ public class EmailLogProcessor : IMessageProcessor
     {
         try
         {
-            var emailLog = JsonSerializer.Deserialize<EmailLog>(message.Value)
-                ?? throw new JsonException("No se pudo deserializar el mensaje de email");
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var emailLog = JsonSerializer.Deserialize<EmailLog>(message.Message.Value, options)
+                ?? throw new JsonException("No se pudo deserializar el mensaje de Email");
 
-            // Patrón UPSERT: Buscar por CorrelationId
-            var existingEmail = await _emailRepository.GetByPredicateAsync(e => e.CorrelationId == emailLog.CorrelationId);
-            
-            if (existingEmail != null)
-            {
-                // Actualizar registro existente
-                existingEmail.Service = emailLog.Service;
-                existingEmail.Endpoint = emailLog.Endpoint;
-                existingEmail.Timestamp = emailLog.Timestamp;
-                existingEmail.Payload = emailLog.Payload;
-                existingEmail.Success = emailLog.Success;
-                await _emailRepository.UpdateAsync(existingEmail);
-            }
-            else
-            {
-                // Crear nuevo registro
-                await _emailRepository.AddAsync(emailLog);
-            }
-
+            await _emailRepository.AddAsync(emailLog);
             await _emailRepository.SaveChangesAsync();
 
             // Registrar en log general de Kafka
@@ -56,7 +39,7 @@ public class EmailLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Email,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Success",
                 KafkaOffset = message.Offset.Value,
                 KafkaPartition = message.Partition.Value
@@ -65,8 +48,8 @@ public class EmailLogProcessor : IMessageProcessor
             await _kafkaLogRepository.AddAsync(kafkaLog);
             await _kafkaLogRepository.SaveChangesAsync();
 
-            _logger.LogInformation("Email procesado: CorrelationId={CorrelationId}, Éxito={Success}", 
-                emailLog.CorrelationId, emailLog.Success);
+            _logger.LogInformation("Email procesado: CorrelationId={CorrelationId}, Destinatario={Recipient}", 
+                emailLog.CorrelationId, emailLog.RecipientEmail);
         }
         catch (Exception ex)
         {
@@ -76,7 +59,7 @@ public class EmailLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Email,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Failed",
                 ErrorDetails = ex.Message,
                 KafkaOffset = message.Offset.Value,

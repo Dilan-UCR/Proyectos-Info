@@ -27,7 +27,8 @@ public class HangfireLogProcessor : IMessageProcessor
     {
         try
         {
-            var hangfireLog = JsonSerializer.Deserialize<HangfireLog>(message.Value)
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var hangfireLog = JsonSerializer.Deserialize<HangfireLog>(message.Message.Value, options)
                 ?? throw new JsonException("No se pudo deserializar el mensaje de Hangfire");
 
             // UPSERT: Actualizar si existe, insertar si no
@@ -55,7 +56,7 @@ public class HangfireLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Hangfire,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Success",
                 KafkaOffset = message.Offset.Value,
                 KafkaPartition = message.Partition.Value
@@ -75,7 +76,7 @@ public class HangfireLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Hangfire,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Failed",
                 ErrorDetails = ex.Message,
                 KafkaOffset = message.Offset.Value,

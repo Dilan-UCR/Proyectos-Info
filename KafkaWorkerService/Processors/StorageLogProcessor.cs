@@ -27,35 +27,18 @@ public class StorageLogProcessor : IMessageProcessor
     {
         try
         {
-            var storageLog = JsonSerializer.Deserialize<StorageLog>(message.Value)
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var storageLog = JsonSerializer.Deserialize<StorageLog>(message.Message.Value, options)
                 ?? throw new JsonException("No se pudo deserializar el mensaje de Storage");
 
-            // Patrón UPSERT: Buscar por CorrelationId
-            var existingStorage = await _storageRepository.GetByPredicateAsync(s => s.CorrelationId == storageLog.CorrelationId);
-            
-            if (existingStorage != null)
-            {
-                // Actualizar registro existente
-                existingStorage.Service = storageLog.Service;
-                existingStorage.Endpoint = storageLog.Endpoint;
-                existingStorage.Timestamp = storageLog.Timestamp;
-                existingStorage.Payload = storageLog.Payload;
-                existingStorage.Success = storageLog.Success;
-                await _storageRepository.UpdateAsync(existingStorage);
-            }
-            else
-            {
-                // Crear nuevo registro
-                await _storageRepository.AddAsync(storageLog);
-            }
-
+            await _storageRepository.AddAsync(storageLog);
             await _storageRepository.SaveChangesAsync();
 
             var kafkaLog = new KafkaLog
             {
                 LogType = LogType.Storage,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Success",
                 KafkaOffset = message.Offset.Value,
                 KafkaPartition = message.Partition.Value
@@ -64,8 +47,8 @@ public class StorageLogProcessor : IMessageProcessor
             await _kafkaLogRepository.AddAsync(kafkaLog);
             await _kafkaLogRepository.SaveChangesAsync();
 
-            _logger.LogInformation("Storage procesado: CorrelationId={CorrelationId}, Éxito={Success}", 
-                storageLog.CorrelationId, storageLog.Success);
+            _logger.LogInformation("Storage procesado: CorrelationId={CorrelationId}, Level={Level}", 
+                storageLog.CorrelationId, storageLog.Level);
         }
         catch (Exception ex)
         {
@@ -75,7 +58,7 @@ public class StorageLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Storage,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Failed",
                 ErrorDetails = ex.Message,
                 KafkaOffset = message.Offset.Value,

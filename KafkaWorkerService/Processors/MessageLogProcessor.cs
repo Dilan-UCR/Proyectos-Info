@@ -27,35 +27,18 @@ public class MessageLogProcessor : IMessageProcessor
     {
         try
         {
-            var messageLog = JsonSerializer.Deserialize<MessageLog>(message.Value)
-                ?? throw new JsonException("No se pudo deserializar el mensaje");
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var messageLog = JsonSerializer.Deserialize<MessageLog>(message.Message.Value, options)
+                ?? throw new JsonException("No se pudo deserializar el mensaje de Message");
 
-            // Patrón UPSERT: Buscar por CorrelationId
-            var existingMessage = await _messageRepository.GetByPredicateAsync(m => m.CorrelationId == messageLog.CorrelationId);
-            
-            if (existingMessage != null)
-            {
-                // Actualizar registro existente
-                existingMessage.Service = messageLog.Service;
-                existingMessage.Endpoint = messageLog.Endpoint;
-                existingMessage.Timestamp = messageLog.Timestamp;
-                existingMessage.Payload = messageLog.Payload;
-                existingMessage.Success = messageLog.Success;
-                await _messageRepository.UpdateAsync(existingMessage);
-            }
-            else
-            {
-                // Crear nuevo registro
-                await _messageRepository.AddAsync(messageLog);
-            }
-
+            await _messageRepository.AddAsync(messageLog);
             await _messageRepository.SaveChangesAsync();
 
             var kafkaLog = new KafkaLog
             {
                 LogType = LogType.Messages,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Success",
                 KafkaOffset = message.Offset.Value,
                 KafkaPartition = message.Partition.Value
@@ -64,8 +47,8 @@ public class MessageLogProcessor : IMessageProcessor
             await _kafkaLogRepository.AddAsync(kafkaLog);
             await _kafkaLogRepository.SaveChangesAsync();
 
-            _logger.LogInformation("Mensaje procesado: CorrelationId={CorrelationId}, Éxito={Success}", 
-                messageLog.CorrelationId, messageLog.Success);
+            _logger.LogInformation("Mensaje procesado: CorrelationId={CorrelationId}, Platform={Platform}", 
+                messageLog.CorrelationId, messageLog.Platform);
         }
         catch (Exception ex)
         {
@@ -75,7 +58,7 @@ public class MessageLogProcessor : IMessageProcessor
             {
                 LogType = LogType.Messages,
                 Topic = message.Topic,
-                Message = message.Value,
+                Message = message.Message.Value,
                 Status = "Failed",
                 ErrorDetails = ex.Message,
                 KafkaOffset = message.Offset.Value,
