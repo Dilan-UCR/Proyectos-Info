@@ -7,8 +7,6 @@ using System.Text;
 
 namespace SERVERHANGFIRE.Flows.Services
 {
-   
-
     public class HttpClientService : IHttpClientService
     {
         private readonly HttpClient _httpClient;
@@ -42,15 +40,15 @@ namespace SERVERHANGFIRE.Flows.Services
                 }
                 else
                 {
-                    _logger.LogError("PDF server devolvió error {StatusCode}. CorrelationId={CorrelationId}", 
+                    _logger.LogError("PDF server devolvió error {StatusCode}. CorrelationId={CorrelationId}",
                         response.StatusCode, request.CorrelationId);
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, " Error al conectar con el PDF server. CorrelationId={CorrelationId}", request.CorrelationId);
-                return false;
+                _logger.LogError(ex, "Error al conectar con el PDF server. CorrelationId={CorrelationId}", request.CorrelationId);
+                throw new HttpRequestException($"Error al enviar solicitud al PDF server. CorrelationId={request.CorrelationId}", ex);
             }
         }
 
@@ -59,49 +57,48 @@ namespace SERVERHANGFIRE.Flows.Services
             return await _kafkaProducer.SendLogAsync(log);
         }
 
-public async Task<HttpResponseMessage> PostAsync(string url, object payload)
-{
-    try
-    {
-        var json = JsonSerializer.Serialize(payload);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        
-        _logger.LogInformation(" Enviando POST a {Url}", url);
-        
-        var response = await _httpClient.PostAsync(url, content);
-        
-        _logger.LogInformation(" Respuesta recibida: {StatusCode}", response.StatusCode);
-        
-        return response;
-    }
-    catch (Exception ex)
-    {
-        _logger.LogError(ex, " Error en POST a {Url}", url);
-        throw;
-    }
-}
+        public async Task<HttpResponseMessage> PostAsync(string url, object payload)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(payload);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-public async Task<HttpResponseMessage> PostAsync<T>(string url, T payload)
-{
-    try
-    {
-        var json = JsonSerializer.Serialize(payload);
-        var content = new StringContent(json, Encoding.UTF8, "application/json");
-        
-        _logger.LogInformation(" Enviando POST a {Url}", url);
-        
-        var response = await _httpClient.PostAsync(url, content);
-        
-        _logger.LogInformation(" Respuesta recibida: {StatusCode}", response.StatusCode);
-        
-        return response;
-    }
-    catch (Exception ex)
-    {
-        _logger.LogError(ex, " Error en POST a {Url}", url);
-        throw;
-    }
-}
+                _logger.LogInformation("Enviando POST a {Url}", url);
 
+                var response = await _httpClient.PostAsync(url, content);
+
+                _logger.LogInformation("Respuesta recibida: {StatusCode}", response.StatusCode);
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error en POST a {Url}", url);
+                throw new HttpRequestException($"Error en POST a {url}", ex);
+            }
+        }
+
+        public async Task<HttpResponseMessage> PostAsync<T>(string url, T payload)
+        {
+            try
+            {
+                var json = JsonSerializer.Serialize(payload);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                _logger.LogInformation("Enviando POST a {Url}", url);
+
+                var response = await _httpClient.PostAsync(url, content);
+
+                _logger.LogInformation("Respuesta recibida: {StatusCode}", response.StatusCode);
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error en POST a {Url}", url);
+                throw new HttpRequestException($"Error en POST a {url}", ex);
+            }
+        }
     }
 }

@@ -1,0 +1,96 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.0"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1764132655000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "Hangfire"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire"
+    },
+    {
+      "key": "sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "64D6DA54-8991-2419-C33F-D75E675632C7"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.projectKey",
+      "value": "Hangfire:64D6DA54-8991-2419-C33F-D75E675632C7"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.projectName",
+      "value": "ServerHangFire"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.projectBaseDir",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.working.directory",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.sources",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Controllers\\ReportsController.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\DTOs\\EmailTaskDto.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\DTOs\\MessasingTaskDto.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\DTOs\\PdfRequestDto.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\EmailJobService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\HttpClientService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\Interfaces\\IEmailJobService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\Interfaces\\IHttpClientService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\Interfaces\\IKafkaProducerService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\Interfaces\\IMessagingJobService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\Interfaces\\IReportJobService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\KafkaProducerService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\MessagingJobService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\PdfServerOptions.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Services\\ReportJobService.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Flows\\Validation\\ReportRequestValidator.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Program.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\ServerHangFire.GlobalUsings.g.cs,\"C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs\",C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\ServerHangFire.AssemblyInfo.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\ServerHangFire.MvcApplicationPartsAssemblyInfo.cs,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\appsettings.Development.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\appsettings.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\.gitignore,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\docker-compose.yml,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\ServerHangFire.http,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\Properties\\launchSettings.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\project.assets.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\ServerHangFire.csproj.nuget.dgspec.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\bin\\Debug\\net9.0\\appsettings.Development.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\bin\\Debug\\net9.0\\appsettings.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\bin\\Debug\\net9.0\\ServerHangFire.deps.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\bin\\Debug\\net9.0\\ServerHangFire.runtimeconfig.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\bin\\Debug\\net9.0\\ServerHangFire.staticwebassets.endpoints.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\rjsmcshtml.dswa.cache.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\rjsmrazor.dswa.cache.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\rpswa.dswa.cache.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\ServerHangFire.sourcelink.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\staticwebassets.build.endpoints.json,C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\obj\\Debug\\net9.0\\staticwebassets.build.json"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "64D6DA54-8991-2419-C33F-D75E675632C7.sonar.cs.scanner.telemetry",
+      "value": "C:\\Users\\luisr\\hangfire info\\Proyectos-Info\\HangFire\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "sonar.token",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://localhost:9000"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}

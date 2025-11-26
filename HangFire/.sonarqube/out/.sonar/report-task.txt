@@ -1,0 +1,6 @@
+projectKey=Hangfire
+serverUrl=http://localhost:9000
+serverVersion=25.10.0.114319
+dashboardUrl=http://localhost:9000/dashboard?id=Hangfire
+ceTaskId=f43e34e4-9b9c-4c82-ab75-2627698ce35e
+ceTaskUrl=http://localhost:9000/api/ce/task?id=f43e34e4-9b9c-4c82-ab75-2627698ce35e

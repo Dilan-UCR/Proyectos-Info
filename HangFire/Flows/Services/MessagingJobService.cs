@@ -19,12 +19,12 @@ namespace SERVERHANGFIRE.Flows.Services
         {
             try
             {
-                _logger.LogInformation("Parámetros recibidos en SendMessageAsync - CorrelationId: '{CorrelationId}', ChatId: '{ChatId}', Platform: '{Platform}', Message: '{Message}'",
+                _logger.LogInformation(
+                    "Parámetros recibidos en SendMessageAsync - CorrelationId: '{CorrelationId}', ChatId: '{ChatId}', Platform: '{Platform}', Message: '{Message}'",
                     correlationId ?? "NULL",
                     chatId ?? "NULL",
                     platform ?? "NULL",
                     message ?? "NULL");
-
 
                 var messagingPayload = new
                 {
@@ -34,7 +34,7 @@ namespace SERVERHANGFIRE.Flows.Services
                     Message = message
                 };
 
-                var messagingApiUrl = _configuration["ApiEndpoints:MessagingService"] 
+                var messagingApiUrl = _configuration["ApiEndpoints:MessagingService"]
                     ?? throw new InvalidOperationException("MessagingService URL no configurada en appsettings.json");
 
                 var response = await _httpClientService.PostAsync(messagingApiUrl, messagingPayload);
@@ -50,15 +50,17 @@ namespace SERVERHANGFIRE.Flows.Services
                     var errorContent = await response.Content.ReadAsStringAsync();
                     _logger.LogError("Error en Messaging API. Status: {StatusCode}, Error: {Error}, CorrelationId: {CorrelationId}",
                         response.StatusCode, errorContent, correlationId);
-                    throw new Exception($"Messaging API returned {response.StatusCode}: {errorContent}");
+
+                    throw new HttpRequestException(
+                        $"Messaging API returned {response.StatusCode}: {errorContent}. CorrelationId={correlationId}");
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
-                throw;
+                throw new InvalidOperationException(
+                    $"Error enviando mensaje. CorrelationId={correlationId}", ex);
             }
-
         }
     }
 }
