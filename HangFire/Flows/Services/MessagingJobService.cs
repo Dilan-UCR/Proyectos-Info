@@ -6,11 +6,13 @@ namespace SERVERHANGFIRE.Flows.Services
     {
         private readonly ILogger<MessagingJobService> _logger;
         private readonly IHttpClientService _httpClientService;
+        private readonly IConfiguration _configuration;
 
-        public MessagingJobService(ILogger<MessagingJobService> logger, IHttpClientService httpClientService)
+        public MessagingJobService(ILogger<MessagingJobService> logger, IHttpClientService httpClientService, IConfiguration configuration)
         {
             _logger = logger;
             _httpClientService = httpClientService;
+            _configuration = configuration;
         }
 
         public async Task SendMessageAsync(string correlationId, string chatId, string platform, string message)
@@ -32,8 +34,8 @@ namespace SERVERHANGFIRE.Flows.Services
                     Message = message
                 };
 
-                var messagingApiUrl = "http://localhost:8002/api/messaging/send";
-
+                var messagingApiUrl = _configuration["ApiEndpoints:MessagingService"] 
+                    ?? throw new InvalidOperationException("MessagingService URL no configurada en appsettings.json");
 
                 var response = await _httpClientService.PostAsync(messagingApiUrl, messagingPayload);
 

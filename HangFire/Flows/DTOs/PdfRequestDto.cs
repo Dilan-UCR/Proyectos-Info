@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace SERVERHANGFIRE.Flows.DTOs
 
 { 
@@ -13,6 +15,8 @@ namespace SERVERHANGFIRE.Flows.DTOs
    
     public class PdfRequestDto
     {
+
+        [JsonRequired]
         public int CustomerId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

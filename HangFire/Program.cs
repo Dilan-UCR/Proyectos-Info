@@ -54,4 +54,4 @@ app.UseAuthorization();
 app.MapControllers();
 app.UseHangfireDashboard("/hangfire");
 
-app.Run();
+await app.RunAsync();
