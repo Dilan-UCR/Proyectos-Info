@@ -5,6 +5,7 @@ import express from "express";
 import messagingRoutes from "./routes/messagingRoutes";
 
 const app = express();
+app.disable("x-powered-by");
 app.use(express.json());
 app.use("/api/messaging", messagingRoutes);
 

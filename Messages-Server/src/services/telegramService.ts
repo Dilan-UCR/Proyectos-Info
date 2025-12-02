@@ -3,7 +3,7 @@ import fs from "fs-extra";
 import { ITelegramService } from "../interfaces/telegramService.interface";
 
 export class TelegramService implements ITelegramService {
-    private bot: TelegramBot;
+    private readonly bot: TelegramBot;
 
     constructor(token: string) {
         this.bot = new TelegramBot(token, { polling: false });

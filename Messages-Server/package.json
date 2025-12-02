@@ -6,7 +6,8 @@
   "scripts": {
     "get-chatid": "ts-node getChatId.ts",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sonar": "sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_f10b2be6eedaed069c7d7acd8233e153f86e39a8 -Dsonar.projectKey=Proyectos-Info"
   },
   "keywords": [],
   "author": "",
