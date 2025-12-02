@@ -1,0 +1,22 @@
+‚
+wC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\obj\Debug\net9.0\ServerHangFire.MvcApplicationPartsAssemblyInfo.csutf-8o
+dC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\obj\Debug\net9.0\ServerHangFire.AssemblyInfo.csutf-8
+tC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\obj\Debug\net9.0\.NETCoreApp,Version=v9.0.AssemblyAttributes.csutf-8q
+fC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\obj\Debug\net9.0\ServerHangFire.GlobalUsings.g.csutf-8H
+?C:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Program.csutf-8h
+_C:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Validation\ReportRequestValidator.csutf-8`
+WC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\PdfServerOptions.csutf-8d
+[C:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\KafkaProducerService.csutf-8`
+WC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\ReportJobService.csutf-8c
+ZC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\MessagingJobService.csutf-8l
+cC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\Interfaces\IReportJobService.csutf-8o
+fC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\Interfaces\IMessagingJobService.csutf-8p
+gC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\Interfaces\IKafkaProducerService.csutf-8m
+dC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\Interfaces\IHttpClientService.csutf-8k
+bC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\Interfaces\IEmailJobService.csutf-8a
+XC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\HttpClientService.csutf-8_
+VC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\Services\EmailJobService.csutf-8Y
+PC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\DTOs\PdfRequestDto.csutf-8\
+SC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\DTOs\MessasingTaskDto.csutf-8X
+OC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Flows\DTOs\EmailTaskDto.csutf-8^
+UC:\Users\luisr\hangfire info\Proyectos-Info\HangFire\Controllers\ReportsController.csutf-8

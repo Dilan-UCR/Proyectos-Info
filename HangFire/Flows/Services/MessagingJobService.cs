@@ -6,23 +6,25 @@ namespace SERVERHANGFIRE.Flows.Services
     {
         private readonly ILogger<MessagingJobService> _logger;
         private readonly IHttpClientService _httpClientService;
+        private readonly IConfiguration _configuration;
 
-        public MessagingJobService(ILogger<MessagingJobService> logger, IHttpClientService httpClientService)
+        public MessagingJobService(ILogger<MessagingJobService> logger, IHttpClientService httpClientService, IConfiguration configuration)
         {
             _logger = logger;
             _httpClientService = httpClientService;
+            _configuration = configuration;
         }
 
         public async Task SendMessageAsync(string correlationId, string chatId, string platform, string message)
         {
             try
             {
-                _logger.LogInformation("Parámetros recibidos en SendMessageAsync - CorrelationId: '{CorrelationId}', ChatId: '{ChatId}', Platform: '{Platform}', Message: '{Message}'",
+                _logger.LogInformation(
+                    "Parámetros recibidos en SendMessageAsync - CorrelationId: '{CorrelationId}', ChatId: '{ChatId}', Platform: '{Platform}', Message: '{Message}'",
                     correlationId ?? "NULL",
                     chatId ?? "NULL",
                     platform ?? "NULL",
                     message ?? "NULL");
-
 
                 var messagingPayload = new
                 {
@@ -32,8 +34,8 @@ namespace SERVERHANGFIRE.Flows.Services
                     Message = message
                 };
 
-                var messagingApiUrl = "http://localhost:8002/api/messaging/send";
-
+                var messagingApiUrl = _configuration["ApiEndpoints:MessagingService"]
+                    ?? throw new InvalidOperationException("MessagingService URL no configurada en appsettings.json");
 
                 var response = await _httpClientService.PostAsync(messagingApiUrl, messagingPayload);
 
@@ -48,15 +50,17 @@ namespace SERVERHANGFIRE.Flows.Services
                     var errorContent = await response.Content.ReadAsStringAsync();
                     _logger.LogError("Error en Messaging API. Status: {StatusCode}, Error: {Error}, CorrelationId: {CorrelationId}",
                         response.StatusCode, errorContent, correlationId);
-                    throw new Exception($"Messaging API returned {response.StatusCode}: {errorContent}");
+
+                    throw new HttpRequestException(
+                        $"Messaging API returned {response.StatusCode}: {errorContent}. CorrelationId={correlationId}");
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error enviando mensaje. CorrelationId: {CorrelationId}", correlationId);
-                throw;
+                throw new InvalidOperationException(
+                    $"Error enviando mensaje. CorrelationId={correlationId}", ex);
             }
-
         }
     }
 }

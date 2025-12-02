@@ -23,7 +23,7 @@ namespace SERVERHANGFIRE.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateReport([FromBody] PdfRequestDto request)
+       public IActionResult CreateReport([FromBody] PdfRequestDto request)
         {
             if (!ReportRequestValidator.IsValid(request, out string errorMessage))
             {
@@ -65,7 +65,7 @@ namespace SERVERHANGFIRE.Controllers
         }
 
         [HttpPost("schedule-email")]
-        public async Task<IActionResult> ScheduleEmailTask([FromBody] EmailTaskDto emailTask)
+       public IActionResult ScheduleEmailTask([FromBody] EmailTaskDto emailTask)
         {
             try
             {
@@ -101,46 +101,53 @@ namespace SERVERHANGFIRE.Controllers
             }
         }
 
-        [HttpPost("schedule-messaging")]
-        public async Task<IActionResult> ScheduleMessagingTask([FromBody] MessagingTaskDto messagingTask)
+    [HttpPost("schedule-messaging")]
+public IActionResult ScheduleMessagingTask([FromBody] MessagingTaskDto messagingTask)
+{
+    try
+    {
+        // Validar datos de entrada
+        if (string.IsNullOrWhiteSpace(messagingTask.CorrelationId) ||
+            string.IsNullOrWhiteSpace(messagingTask.PhoneNumber) ||
+            string.IsNullOrWhiteSpace(messagingTask.Message))
         {
-            try
-            {
-                _logger.LogInformation("Datos recibidos - CorrelationId: '{CorrelationId}', PhoneNumber: '{PhoneNumber}', Message: '{Message}', CustomerId: {CustomerId}",
-                    messagingTask.CorrelationId ?? "NULL",
-                    messagingTask.PhoneNumber ?? "NULL",
-                    messagingTask.Message ?? "NULL",
-                    messagingTask.CustomerId);
-
-                _logger.LogInformation("Recibida solicitud de programación de messaging. CorrelationId: {CorrelationId}", messagingTask.CorrelationId);
-
-                var jobId = _hangfire.Schedule<IMessagingJobService>(
-                    job => job.SendMessageAsync(
-                        messagingTask.CorrelationId,
-                        messagingTask.PhoneNumber,  
-                        "telegram",  
-                        messagingTask.Message
-                    ),
-                    TimeSpan.FromMinutes(1)
-                );
-
-                _logger.LogInformation("Tarea de messaging programada exitosamente. JobId: {JobId}, CorrelationId: {CorrelationId}", jobId, messagingTask.CorrelationId);
-
-                return Ok(new
-                {
-                    JobId = jobId,
-                    CorrelationId = messagingTask.CorrelationId,
-                    Status = "Scheduled",
-                    ScheduledTime = DateTime.UtcNow.AddMinutes(1),
-                    Message = "Messaging task scheduled successfully",
-                    PhoneNumber = messagingTask.PhoneNumber
-                });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error al programar tarea de messaging. CorrelationId: {CorrelationId}", messagingTask.CorrelationId);
-                return StatusCode(500, new { Error = "Error al programar tarea de messaging", Details = ex.Message });
-            }
+            return BadRequest(new { Error = "CorrelationId, PhoneNumber y Message son requeridos" });
         }
+
+        _logger.LogInformation(
+            "Solicitud de messaging recibida - CorrelationId: '{CorrelationId}', PhoneNumber: '{PhoneNumber}', Message: '{Message}', CustomerId: {CustomerId}",
+            messagingTask.CorrelationId,
+            messagingTask.PhoneNumber,
+            messagingTask.Message,
+            messagingTask.CustomerId);
+
+        var jobId = _hangfire.Schedule<IMessagingJobService>(
+            job => job.SendMessageAsync(
+                messagingTask.CorrelationId,
+                messagingTask.PhoneNumber,  
+                "telegram",  
+                messagingTask.Message
+            ),
+            TimeSpan.FromMinutes(1)
+        );
+
+        _logger.LogInformation("Tarea de messaging programada. JobId: {JobId}, CorrelationId: {CorrelationId}", jobId, messagingTask.CorrelationId);
+
+        return Ok(new
+        {
+            JobId = jobId,
+            CorrelationId = messagingTask.CorrelationId,
+            Status = "Scheduled",
+            ScheduledTime = DateTime.UtcNow.AddMinutes(1),
+            Message = "Messaging task scheduled successfully",
+            PhoneNumber = messagingTask.PhoneNumber
+        });
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Error al programar tarea de messaging. CorrelationId: {CorrelationId}", messagingTask?.CorrelationId);
+        return StatusCode(500, new { Error = "Error al programar tarea de messaging", Details = ex.Message });
+    }
+}
     }
 }

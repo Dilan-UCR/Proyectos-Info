@@ -6,11 +6,10 @@ using SERVERHANGFIRE.Flows.Services.Interfaces;
 
 namespace SERVERHANGFIRE.Flows.Services
 {
-     public class KafkaOptions
+    public class KafkaOptions
     {
-      public string BootstrapServers { get; set; } = "48.211.170.113:9092"; 
-      public string Topic { get; set; } = "logs-hangfire";
-
+        public string BootstrapServers { get; set; } = "48.211.170.113:9092";
+        public string Topic { get; set; } = "logs-hangfire";
     }
 
     public class KafkaProducerService : IKafkaProducerService, IDisposable
@@ -18,6 +17,7 @@ namespace SERVERHANGFIRE.Flows.Services
         private readonly IProducer<Null, string> _producer;
         private readonly string _topic;
         private readonly ILogger<KafkaProducerService> _logger;
+        private bool _disposed;
 
         public KafkaProducerService(IOptions<KafkaOptions> options, ILogger<KafkaProducerService> logger)
         {
@@ -37,7 +37,8 @@ namespace SERVERHANGFIRE.Flows.Services
             try
             {
                 var message = JsonSerializer.Serialize(log);
-                var result = await _producer.ProduceAsync(_topic, new Message<Null, string> { Value = message });
+
+                await _producer.ProduceAsync(_topic, new Message<Null, string> { Value = message });
 
                 _logger.LogInformation("Log enviado a Kafka. CorrelationId={CorrelationId}", log.CorrelationId);
                 return true;
@@ -49,10 +50,24 @@ namespace SERVERHANGFIRE.Flows.Services
             }
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _producer?.Flush(TimeSpan.FromSeconds(5));
+                    _producer?.Dispose();
+                }
+
+                _disposed = true;
+            }
+        }
+
         public void Dispose()
         {
-            _producer?.Flush(TimeSpan.FromSeconds(5));
-            _producer?.Dispose();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

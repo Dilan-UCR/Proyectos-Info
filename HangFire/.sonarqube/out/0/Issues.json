@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "4.14.0.0",
+        "fileVersion": "4.14.0-3.25359.3 (6dbcfd2f)",
+        "semanticVersion": "4.14.0",
+        "language": "es-ES"
+      },
+      "results": [
+        {
+          "ruleId": "CA1860",
+          "level": "note",
+          "message": "Es preferible comparar \"Count\" con 0 en lugar de usar \"Any()\", tanto por claridad como por rendimiento.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Validation/ReportRequestValidator.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 46,
+                  "endLine": 23,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "DiagnosticPropertyKey": "Count"
+            }
+          }
+        },
+        {
+          "ruleId": "S2139",
+          "level": "warning",
+          "message": "Either log this exception and handle it, or rethrow it with some contextual information.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Services/ReportJobService.cs",
+                "region": {
+                  "startLine": 70,
+                  "startColumn": 30,
+                  "endLine": 70,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Services/ReportJobService.cs",
+                "region": {
+                  "startLine": 74,
+                  "startColumn": 17,
+                  "endLine": 74,
+                  "endColumn": 103
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Services/ReportJobService.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 17,
+                  "endLine": 75,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Logging statement.",
+              "1": "Thrown exception."
+            }
+          }
+        },
+        {
+          "ruleId": "S2139",
+          "level": "warning",
+          "message": "Either log this exception and handle it, or rethrow it with some contextual information.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Services/EmailJobService.cs",
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 30,
+                  "endLine": 54,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Services/EmailJobService.cs",
+                "region": {
+                  "startLine": 56,
+                  "startColumn": 17,
+                  "endLine": 56,
+                  "endColumn": 108
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/luisr/hangfire%20info/Proyectos-Info/HangFire/Flows/Services/EmailJobService.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 17,
+                  "endLine": 57,
+                  "endColumn": 23
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1,
+            "customProperties": {
+              "0": "Logging statement.",
+              "1": "Thrown exception."
+            }
+          }
+        }
+      ],
+      "rules": {
+        "CA1860": {
+          "id": "CA1860",
+          "shortDescription": "Evitar usar el método de extensión \"Enumerable.Any()\"",
+          "fullDescription": "Es preferible usar las propiedades \"IsEmpty\", \"Count\" o \"Length\", si hay alguna disponible, en lugar de llamar a \"Enumerable.Any()\". La intención es más clara y tiene un mejor rendimiento que usar el método de extensión \"Enumerable.Any()\".",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1860",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "S2139": {
+          "id": "S2139",
+          "shortDescription": "Exceptions should be either logged or rethrown but not both",
+          "fullDescription": "When an exception is logged and rethrown, the upstream code may not be aware that the exception has already been logged. As a result, the same exception gets logged multiple times, making it difficult to identify the root cause of the issue. This can be particularly problematic in multi-threaded applications where messages from other threads can be interwoven with the repeated log entries.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2139",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
